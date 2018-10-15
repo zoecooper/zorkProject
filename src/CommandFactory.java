@@ -22,7 +22,7 @@ public class CommandFactory {
         if (MOVEMENT_COMMANDS.contains(command)) {
             return new Command(command);
         } else {
-            // For now, only one type of command: "move".
+            // For now, only one type of command object, to move and to save.
             return new Command(command);
         }
     }
