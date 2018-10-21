@@ -1,0 +1,100 @@
+Zoetopia
+Zork II
+===
+Rooms:
+Atrium
+You are in the center of a huge lobby. People and animals are buzzing around you, heading in various directions. There is an elevator directly behind you, another to the west of you, and another to the east. There is a gateway in front of you.
+---
+Main elevator
+When you step in the elevator, you notice its four walls are each decorated with a picture of a different place. One wall's picture shows a snowy hill, one shows desert dunes, another a city skyline, and another the treetops of a tropical rainforest.
+---
+Balcony
+You are looking over the atrium. You can see all of the creatures moving about. A soft breeze flows by.
+---
+Gateway
+This is a crowded hallway. Along the edges you notice various plants, little dunes, mini skyscapers and model airplanes, and icicles. There is a beautiful door in front of you.
+---
+West elevator
+Standing in the elevator facing the doors, you notice the elevator's side walls are painted top to bottom with gorgeous murals. The wall to your left shows a skyscraper and the right a camel.
+---
+East elevator
+Standing in the elevator facing the doors, you notice the elevator's side walls are painted top to bottom with gorgeous murals. A giant polar bear is painted on the wall to your left and the right is of a jumble of jungle vines.
+---
+Cave
+Your feet are submerged in dust, mud, and filth. The room is empty and looks like it was never completed. There is one exit behind you.
+---
+Jail
+You are in what appears to be a jail cell. The door you came in from is locked from this side. You cannot get out from here. It is a dead end.
+---
+===
+Exits:
+Atrium
+s
+Main elevator
+---
+Atrium
+w
+East elevator
+---
+Atrium
+e
+West elevator
+---
+Atrium
+n
+Gateway
+---
+Main elevator
+u
+Balcony
+---
+Main elevator
+d
+Cave
+---
+Main elevator
+n
+Atrium
+---
+Cave
+s
+Jail
+---
+Gateway
+s
+Atrium
+---
+Gateway
+n
+Gardens
+---
+Balcony
+s
+Main elevator
+---
+East elevator
+u
+Tropical Room
+---
+East elevator
+d
+Tundra room
+---
+East elevator
+n
+Atrium
+---
+West elevator
+n
+Atrium
+---
+West elevator
+u
+City Room
+---
+West elevator
+d
+Desert Room
+---
+===
+
