@@ -1,14 +1,80 @@
 Zoetopia
-Zork II
+Zork III
+===
+Items:
+magicMushroom, mushroom
+5
+toss:You toss the mushroom.
+bite:You ate the  mushroom. AH! It was poisonous. You pass out for a minute.
+---
+lighter
+7
+ignite:You ingite the lighter and you use it to see around you.
+blow:You blow out the lighter. 
+---
+pineapple
+6
+toss:You toss the pineapple.
+---
+cactus
+6
+toss:You toss the pineapple. 
+throw:You throw at cactus ahead of you to protect yourself.
+---
+apple
+4
+toss:You toss the apple.
+give:You give the apple to the meanest-looking stranger closest to you in hopes it is poisonous and will kill them.
+---
+arcticFish, fish
+5
+eat:You eat a bite of the fish. It is very cold and gives you a brain-freeze.
+---
+hibiscusFlower, hibiscus, flower
+3
+smell:You smell the aroma of the beautiful red flower. Mmmmm...
+stomp:You stomp on the flower to press its leaves, it would be perfect to mix in with something...
+peel:You peel off each petal, hoping you will find your lover. Now your flower is just a stem.
+---
+key
+2
+lock:You use the key to lock the door.
+unlock:You use the key to unlock the door.
+---
+rock
+3
+place:You place the heavy rock filling your backpack down.
+kick:You kick the rock. Nothing happens.
+---
+backpack, pack
+10
+wear:You put the backpack on.
+remove:You remove the backpack off your shoulders. What a relief!
+---
+magicWand, wand
+6
+wave:You wave your wand and all of the colors of the world around you turn into sepia. Cool!
+shake:You shake your wand up and everything begins floating.
+---
+rope
+3
+hang:You hang the rope over something to use as a pulley.
+knot:You make a knot in the rope.
+---
+basket
+4
+---
 ===
 Rooms:
 Atrium
-You are in the center of a huge lobby. People and animals are buzzing around you, heading in various directions. There is an elevator directly behind you, another to the west of you, and another to the east. There is a gateway in front of you.
+Contents: backpack, pack
+You are in the center of a huge lobby. People and animals are buzzing around you, heading in various directions. There is an open, empty backpack on the sofa to your right. There is an elevator directly behind you, another to the west of you, and another to the east. There is a gateway in front of you.
 ---
 Main elevator
 When you step in the elevator, you notice its four walls are each decorated with a picture of a different place. One wall's picture shows a snowy hill, one shows desert dunes, another a city skyline, and another the treetops of a tropical rainforest.
 ---
 Balcony
+Contents: lighter
 You are looking over the atrium. You can see all of the creatures moving about. A soft breeze flows by.
 ---
 Gateway
@@ -21,10 +87,19 @@ East elevator
 Standing in the elevator facing the doors, you notice the elevator's side walls are painted top to bottom with gorgeous murals. A giant polar bear is painted on the wall to your left and the right is of a jumble of jungle vines.
 ---
 Cave
+Contents: rock
 Your feet are submerged in dust, mud, and filth. The room is empty and looks like it was never completed. There is one exit behind you.
 ---
 Jail
-You are in what appears to be a jail cell. The door you came in from is locked from this side. You cannot get out from here. It is a dead end.
+Contents: magicWand, wand
+You are in what appears to be a jail cell. The door you came in from is locked from this side. You cannot get out from here. It is a dead end. There is a chest here.
+---
+Patio
+The sun shines across your face as you step out and surrounds you is a beautiful open terrace. There are tables full of animals grabbing afternoon cocktails. In front of you are the gardens around the mansion.
+---
+Gardens
+Contents: hibiscusFlower, hibiscus, flower
+You are in the middle of an open field with rows of flowers. In the distance, you can see a long, narrow river splitting the two halves of the plain. You can go w to a gloomy area with lots of trees, you can go e where you see a seemingly large mountain hidden by clouds, or north to follow the river.  
 ---
 ===
 Exits:
@@ -66,7 +141,15 @@ Atrium
 ---
 Gateway
 n
+Patio
+---
+Patio
+n
 Gardens
+---
+Patio
+s
+Gateway
 ---
 Balcony
 s
@@ -97,4 +180,3 @@ d
 Desert Room
 ---
 ===
-
