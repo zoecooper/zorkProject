@@ -3,16 +3,20 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.IOException;
 import java.io.PrintWriter;
+
 public class Room {
+
     class NoRoomException extends Exception {}
     
-    
-    
+    static String CONTENTS_STARTER = "Contents: ";
+
     
     private String title;
     private String desc;
     private boolean beenHere;
     private ArrayList<Exit> exits;
+    private ArrayList<Item> contents; //items
+
     Room(String title) {
         init();
         this.title = title;
@@ -29,6 +33,10 @@ public class Room {
         Dungeon.IllegalDungeonFormatException {
         
         this(s, d, true);
+    }
+
+    Room(Scanner s, Dungeon d, boolean initState) throws NoRoomException, Dungeon.IllegalDungeonFormatException {
+
         init();
         title = s.nextLine();
         desc = "";
