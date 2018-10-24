@@ -7,6 +7,7 @@ public class Item{
 	private String primaryName;
 	private int weight;
 	private Hashtable <String, String> messages;
+	char colon = ':';
 
 	public Item(Scanner s){
 		String name = s.nextLine();		
@@ -14,14 +15,14 @@ public class Item{
 		System.out.println(primaryName);
 		this.weight = Integer.parseInt(s.nextLine());
 		System.out.println(weight);
-		if(s.nextLine().contains(":")){
-			System.out.println("it here");
-			String action = s.nextLine();
-			for(int i = 0; i < action.length(); i++){
-				while(action.charAt(i) == ','){
-					String reaction = action.substring(i);
-					action = action.substring(0,i);
-					System.out.println(action + " " + reaction);
+		String line = s.nextLine();
+		while(!line.equals("---")){
+			for(int i = 0; i < line.length(); i++){
+				if(line.charAt(i) == colon){
+					String reaction = line.substring(i+1);
+					String action = line.substring(0,i);
+					System.out.println(action + " does" + reaction);
+					line = s.nextLine();
 				}
 			}
 		}
