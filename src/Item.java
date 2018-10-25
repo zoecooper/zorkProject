@@ -8,10 +8,11 @@ public class Item{
 	private int weight;
 	private Hashtable <String, String> messages;
 	char colon = ':';
+	Hashtable <String, String> names = new Hashtable<String, String>();
 	 
 
 	public Item(Scanner s){
-		Hashtable <String, String> names = new Hashtable<String, String>();
+
 		String name = s.nextLine();		
 		this.primaryName = s.nextLine();
 		if(primaryName.contains(",")){
@@ -47,6 +48,16 @@ public class Item{
 	}
 	public String getMessageForVerb(String verb){
 		return messages.get(verb);
+	}
+	public Boolean goesBy(String name){
+		if(names.get(primaryName).contains(name)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	public String toString(){
+		return Item;
 	}
 
 	public static void main(String args[]){
