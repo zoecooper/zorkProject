@@ -126,8 +126,6 @@ public class Room {
         if (beenHere) {
             description = title;
         } else {
-            GameState.instance().addScore(5);
-
             description = title + "\n" + desc;
         }
         for (Item item : contents) {
@@ -146,13 +144,8 @@ public class Room {
     public Room leaveBy(String dir) {
         for (Exit exit : exits) {
             if (exit.getDir().equals(dir)) {
-                exit.unlock();
-                if(exit.isLocked()){
-                    System.out.println("You are unable to go that way with out a key.");
-                    return exit.getSrc();
-                }
                 return exit.getDest();
-            }
+	    }
         }
         return null;
     }
