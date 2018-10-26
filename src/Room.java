@@ -47,14 +47,28 @@ public class Room {
         String lineOfDesc = s.nextLine();
         while (!lineOfDesc.equals(Dungeon.SECOND_LEVEL_DELIM) &&
                !lineOfDesc.equals(Dungeon.TOP_LEVEL_DELIM)) {
-            desc += lineOfDesc + "\n";
-            lineOfDesc = s.nextLine();
-        }
-
-
-
-
-
+         //   desc += lineOfDesc + "\n";
+       //     lineOfDesc = s.nextLine();
+	
+	if(lineOfDesc.startsWith(CONTENTS_STARTER)) {
+		String itemList = lineOfDesc.substring(CONTENTS_STARTER.length());
+		String[] itemNames = itemList.split(",");
+		for(String itemName : itemNames) {
+			try{
+				if(initState) {
+					add(d.getItem(itemName));
+				}
+			}
+			catch(Item.NoItemException e) {
+				throw new Dungeon.IllegalDungeonFormatException(
+				"No such item '" + itemName + "'");
+			}
+		     }
+	}else {
+		desc += lineOfDesc +"\n";
+	}
+	lineOfDesc = s.nextLine();
+    }
 
             // throw away delimiter
         if (!lineOfDesc.equals(Dungeon.SECOND_LEVEL_DELIM)) {
