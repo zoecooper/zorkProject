@@ -21,7 +21,7 @@ public class Dungeon {
     // Variables relating to dungeon file (.zork) storage.
     public static String ROOMS_MARKER = "Rooms:";
     public static String EXITS_MARKER = "Exits:";
-    public static ITEMS_MARKER = "Items:";
+    public static String ITEMS_MARKER = "Items:";
     
     // Variables relating to game state (.sav) storage.
     static String FILENAME_LEADER = "Dungeon file: ";
