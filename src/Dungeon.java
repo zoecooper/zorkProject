@@ -69,12 +69,12 @@ public class Dungeon {
 
         try {
             // Instantiate and add first room (the entry).
-            entry = new Room(s);
+            entry = new Room(s,initState);
             add(entry);
 
             // Instantiate and add other rooms.
             while (true) {
-                add(new Room(s));
+                add(new Room(s,initState));
             }
         } catch (Room.NoRoomException e) {  /* end of rooms */ }
 
