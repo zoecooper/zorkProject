@@ -1,4 +1,4 @@
-
+    
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.IOException;
@@ -7,17 +7,20 @@ import java.io.PrintWriter;
 public class Room {
 
     class NoRoomException extends Exception {}
+    
+    static String CONTENTS_STARTER = "Contents: ";
 
+    
     private String title;
     private String desc;
     private boolean beenHere;
     private ArrayList<Exit> exits;
+    private ArrayList<Item> contents; //items
 
     Room(String title) {
         init();
         this.title = title;
     }
-
     /** Given a Scanner object positioned at the beginning of a "room" file
         entry, read and return a Room object representing it. 
         @throws NoRoomException The reader object is not positioned at the
@@ -26,8 +29,13 @@ public class Room {
         @throws IllegalDungeonFormatException A structural problem with the
         dungeon file itself, detected when trying to read this room.
      */
-    Room(Scanner s) throws NoRoomException,
+    Room(Scanner s, Dungeon d) throws NoRoomException,
         Dungeon.IllegalDungeonFormatException {
+        
+        this(s, d, true);
+    }
+
+    Room(Scanner s, Dungeon d, boolean initState) throws NoRoomException, Dungeon.IllegalDungeonFormatException {
 
         init();
         title = s.nextLine();
@@ -43,23 +51,24 @@ public class Room {
             lineOfDesc = s.nextLine();
         }
 
-        // throw away delimiter
+
+
+
+
+
+            // throw away delimiter
         if (!lineOfDesc.equals(Dungeon.SECOND_LEVEL_DELIM)) {
             throw new Dungeon.IllegalDungeonFormatException("No '" +
                 Dungeon.SECOND_LEVEL_DELIM + "' after room.");
         }
     }
-
     // Common object initialization tasks.
     private void init() {
         exits = new ArrayList<Exit>();
         beenHere = false;
     }
-
     String getTitle() { return title; }
-
     void setDesc(String desc) { this.desc = desc; }
-
     /*
      * Store the current (changeable) state of this room to the writer
      * passed.
@@ -73,18 +82,15 @@ public class Room {
             w.println(Dungeon.SECOND_LEVEL_DELIM);
         }
     }
-
+    
     void restoreState(Scanner s) throws GameState.IllegalSaveFormatException {
-
         String line = s.nextLine();
         if (!line.startsWith("beenHere")) {
             throw new GameState.IllegalSaveFormatException("No beenHere.");
         }
         beenHere = Boolean.valueOf(line.substring(line.indexOf("=")+1));
-
         s.nextLine();   // consume end-of-room delimiter
     }
-
     public String describe() {
         String description;
         if (beenHere) {
@@ -107,7 +113,6 @@ public class Room {
         }
         return null;
     }
-
     void addExit(Exit exit) {
         exits.add(exit);
     }
