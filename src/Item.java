@@ -1,6 +1,7 @@
 import java.util.Hashtable;
 import java.util.Scanner;
 import java.lang.*;
+import java.util.ArrayList;
 import java.io.FileReader;
 import java.io.FileNotFoundException;
 public class Item{
@@ -57,7 +58,7 @@ public class Item{
 		}
 	}
 	public String toString(){
-		return Item;
+		return primaryName;
 	}
 
 	public static void main(String args[]){
