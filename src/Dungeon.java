@@ -21,6 +21,7 @@ public class Dungeon {
     // Variables relating to dungeon file (.zork) storage.
     public static String ROOMS_MARKER = "Rooms:";
     public static String EXITS_MARKER = "Exits:";
+    public static String ITEMS_MARKER = "Items:";
     
     // Variables relating to game state (.sav) storage.
     static String FILENAME_LEADER = "Dungeon file: ";
@@ -29,6 +30,7 @@ public class Dungeon {
     private String name;
     private Room entry;
     private Hashtable<String,Room> rooms;
+    private Hashtable<String,Item> items;
     private String filename;
 
     Dungeon(String name, Room entry) {
@@ -43,7 +45,7 @@ public class Dungeon {
      * Read from the .zork filename passed, and instantiate a Dungeon object
      * based on it.
      */
-    public Dungeon(String filename) throws FileNotFoundException,
+    public Dungeon(String filename, boolean initState) throws FileNotFoundException,
         IllegalDungeonFormatException {
 
         init();
@@ -59,6 +61,17 @@ public class Dungeon {
             throw new IllegalDungeonFormatException("No '" +
                 TOP_LEVEL_DELIM + "' after version indicator.");
         }
+
+	if (!s.nextLine().equals(ITEMS_MARKER)) {
+            throw new IllegalDungeonFormatException("No '" +
+                ITEMS_MARKER + "' line where expected.");
+        }
+
+	try {
+            while (true) {
+                add(new Item(s));
+            }
+        } catch (Item.NoItemException e) { }
 
         // Throw away Rooms starter.
         if (!s.nextLine().equals(ROOMS_MARKER)) {
@@ -139,8 +152,17 @@ public class Dungeon {
     public String getName() { return name; }
     public String getFilename() { return filename; }
     public void add(Room room) { rooms.put(room.getTitle(),room); }
+    public void add(Item item) { items.put(item.getPrimaryName(),item); } //adding item
 
     public Room getRoom(String roomTitle) {
         return rooms.get(roomTitle);
+    }
+
+    public Item getItem(String primaryItemName) throws Item.NoItemException {
+
+        if (items.get(primaryItemName) == null) {
+            throw new Item.NoItemException();
+        }
+        return items.get(primaryItemName);
     }
 }
