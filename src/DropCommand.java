@@ -7,12 +7,12 @@ class DropCommand extends Command {
 	}
 
 	public String execute() {
-		if(itemName == null || itemName.trim() == 0) {
+		if(itemName == null || itemName.trim().length() == 0) {
 			return "Drop what?\n";
 		}
 
 		try{
-			Item theItem = GameState.instance().getItemFromInventoryName(itemName);
+			Item theItem = GameState.instance().getItemFromInventoryNamed(itemName);
 			GameState.instance().removeFromInventory(theItem);
 			GameState.instance().getAdventurersCurrentRoom().add(theItem);
 			return itemName + " dropped.\n";
