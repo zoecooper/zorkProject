@@ -1,4 +1,18 @@
-//class LookCommand extends Command {
+import java.util.ArrayList;
 
-//	String currenRoom = GameState.instance().getAdventurersCurrentRoom().getTitle(0;
-//	ArrayList<Item>
+class LookCommand extends Command {
+
+	String currenRoom = GameState.instance().getAdventurersCurrentRoom().getTitle();
+	ArrayList<Item>contents = GameState.instance().getAdventurersCurrentRoom().getContents();
+	String lookLeader = "Looking around";
+
+	
+	public LookCommand() {
+	
+	}
+
+	String execute() {
+		return GameState.instance().getAdventurersCurrentRoom().describe();
+	}
+}
+
