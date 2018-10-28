@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import java.io.FileReader;
 import java.io.FileNotFoundException;
 public class Item{
+
+	class NoItemException extends Exception {}
+
 	private String primaryName;
 	private int weight;
 	private Hashtable <String, String> messages;
