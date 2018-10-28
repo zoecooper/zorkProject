@@ -161,7 +161,7 @@ public class Dungeon {
     public Item getItem(String primaryItemName) throws Item.NoItemException {
 
         if (items.get(primaryItemName) == null) {
-            throw new Item.NoItemException();
+           // throw new Item.NoItemException();
         }
         return items.get(primaryItemName);
     }
