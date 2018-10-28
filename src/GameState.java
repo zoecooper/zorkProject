@@ -90,6 +90,9 @@ public class GameState {
     Dungeon getDungeon() {
         return dungeon;
     }
-    ArrayList<Item> inventory = new ArrayList<Item>();
+    Item getInventory(){
+	    ArrayList<Item> inventory = new ArrayList<Item>();
+    }
+
 
 }

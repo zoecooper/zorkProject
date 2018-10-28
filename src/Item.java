@@ -6,7 +6,11 @@ import java.io.FileReader;
 import java.io.FileNotFoundException;
 public class Item{
 
+<<<<<<< HEAD
 //	static class NoItemException extends Exception{}
+=======
+	class NoItemException extends Exception {}
+>>>>>>> 0915226a55066d8a2c50c96e5be915134f57c4b3
 
 	private String primaryName;
 	private int weight;
