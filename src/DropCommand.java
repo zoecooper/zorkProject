@@ -14,7 +14,7 @@ class DropCommand extends Command {
 		try{
 			Item theItem = GameState.instance().getItemFromInventoryName(itemName);
 			GameState.instance().removeFromInventory(theItem);
-			GameState.instance().getAnventurersCurrentRoom().add(theItem);
+			GameState.instance().getAdventurersCurrentRoom().add(theItem);
 			return itemName + " dropped.\n";
 		}
 
