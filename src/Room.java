@@ -168,7 +168,7 @@ public class Room {
                 return item;
             }
         }
-        throw new Item.NoItemException();
+       // throw new Item.NoItemException();
     }
 
     ArrayList<Item> getContents() {
