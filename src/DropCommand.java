@@ -18,7 +18,7 @@ class DropCommand extends Command {
 			return itemName + " dropped.\n";
 		}
 
-		catch(Item.NoItemException e) {
+		catch(Exception e) {
 			return "You don't have a " + itemName + ".\n";
 		}
 	}

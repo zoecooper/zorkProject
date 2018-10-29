@@ -7,6 +7,7 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 
 public class GameState {
+	ArrayList<Item> inventory = new ArrayList<Item>();
 
     public static class IllegalSaveFormatException extends Exception {
         public IllegalSaveFormatException(String e) {
@@ -16,7 +17,7 @@ public class GameState {
 
     static String DEFAULT_SAVE_FILE = "zork_save";
     static String SAVE_FILE_EXTENSION = ".sav";
-    static String SAVE_FILE_VERSION = "Zork II save data";
+    static String SAVE_FILE_VERSION = "Zork III save data";
 
     static String CURRENT_ROOM_LEADER = "Current room: ";
 
@@ -52,7 +53,7 @@ public class GameState {
         }
 
         dungeon = new Dungeon(dungeonFileLine.substring(
-            Dungeon.FILENAME_LEADER.length()));
+            Dungeon.FILENAME_LEADER.length()), true);
         dungeon.restoreState(s);
 
         String currentRoomLine = s.nextLine();
@@ -90,9 +91,29 @@ public class GameState {
     Dungeon getDungeon() {
         return dungeon;
     }
-    Item getInventory(){
-	    ArrayList<Item> inventory = new ArrayList<Item>();
+
+    ArrayList<Item> getInventory(){
+	    return this.inventory;
     }
+    Item getItemInVicinityNamed(String name) throws Item.NoItemException {
+	    return this.adventurersCurrentRoom.getItemNamed(name);
+    }
+    Item getItemFromInventoryNamed(String name){
+	    for (int i = 0; i<inventory.size(); i++){
+		    if(inventory.get(i).equals(name)){
+			    return inventory.get(i);
+		    }
+		  
+	    }
+	    return null;
+    }
+    void addToInventory(Item item){
+	    inventory.add(item);
+    }
+    void removeFromInventory(Item item){
+	    inventory.remove(item);
+    }
+
 
 
 }
