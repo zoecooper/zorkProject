@@ -1,5 +1,4 @@
 abstract class Command {
 
-	abstract String execute();
-
+	abstract String execute() throws Item.NoItemException;
 }	
