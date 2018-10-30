@@ -6,8 +6,8 @@ class InventoryCommand extends Command {
 	}
 
 	public String execute() {
-		ArrayList<String> names = GameState.instance().getInventoryNames();
-	
+		ArrayList<String> names = GameState.instance().getInventoryNamed();
+
 			if (names.size() == 0) {
 				return "You are empty handed.\n";
 				

@@ -1,0 +1,75 @@
+BirdsNest
+Zork III
+===
+Items:
+lamp
+8
+on:You turn on the lamp.
+Off:You turn off the lamp. Woah! You can not see anything. 
+---
+chair
+12
+sit:You take a seat. Dang its dusty!
+---
+sunflower,flower
+1
+smell:You smell the flower and get stung by a bee OUCH!!!!
+---
+book
+7
+open:You open the book.
+close:You close the book:
+---
+doll
+6
+touch:You touch the doll, it winks and faintly giggles.
+---
+chessboard, chess, board
+4
+move:You see the chess pieces move as if they are playing against eachother. 
+sound:The chess pieces scrape against the board creating a cringy noise.
+---
+telescope
+66
+see:You can see the stars and the crescent moon shining on the earth.
+turn:You turn it to observe more stars but you see a shadow cross your gaze and it startles you. 
+---
+chocolate 
+2
+bite:You bite into it, staisfying your sweet tooth.
+keep:You keep it and you share it with the doll.
+---
+meal
+16
+smell:You smell the savory aroma of the food. Making you crave more chocolate but its all gone.
+eat:You eat it since there is no more chocolate left.
+--- 
+projecter
+36
+start:You start the movie and you hear a loud scream coming from the dining room. AHHHHHH!!!!
+---
+popcorn
+3
+munch:You munch on the stale popcorn. It makes your teeth hurt. 
+---
+poker
+5
+deal:You deal the crads to the empty chairs at the table and they begin to float as if they are playing.
+---
+frog-statue
+89
+approach:You approach the frog-statue and ribbits at you. 
+kiss:You kiss the frog-statue, it turns into a not so charming prince. 
+---
+===
+Rooms:  
+
+ 
+
+
+
+
+
+ 
+
+
