@@ -71,7 +71,7 @@ public class Dungeon {
             while (true) {
                 add(new Item(s));
             }
-        } catch (Item.NoItemException e) { }
+        } catch (Exception e) { }
 
         // Throw away Rooms starter.
         if (!s.nextLine().equals(ROOMS_MARKER)) {
@@ -82,12 +82,12 @@ public class Dungeon {
 
         try {
             // Instantiate and add first room (the entry).
-            entry = new Room(s,initState);
+            entry = new Room(s,this,initState);
             add(entry);
 
             // Instantiate and add other rooms.
             while (true) {
-                add(new Room(s,initState));
+                add(new Room(s,this,initState));
             }
         } catch (Room.NoRoomException e) {  /* end of rooms */ }
 
@@ -143,7 +143,7 @@ public class Dungeon {
 
         String roomName = s.nextLine();
         while (!roomName.equals(TOP_LEVEL_DELIM)) {
-            getRoom(roomName.substring(0,roomName.length()-1)).restoreState(s);
+            this.getRoom(roomName.substring(0,roomName.length()-1)).restoreState(s,this);
             roomName = s.nextLine();
         }
     }

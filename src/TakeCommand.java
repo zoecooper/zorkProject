@@ -15,24 +15,31 @@ class TakeCommand extends Command {
 	try{
 		Room currentRoom = GameState.instance().getAdventurersCurrentRoom();
 		Item theItem = currentRoom.getItemNamed(itemName);
+		if(theItem == null ){
+			throw new Item.NoItemException(); 
+		}
 		GameState.instance().addToInventory(theItem);
 		currentRoom.remove(theItem);
 		return itemName + "taken.\n";
 
 	}
 	catch(Item.NoItemException e) {
-
+	System.out.print("Not Found");
+	}
 
 	try{
-		GameState.instance().getItemFromInventoryNamed(itemName);
+		Item x = GameState.instance().getItemFromInventoryNamed(itemName);
+		if(x == null){
+			throw new Item.NoItemException(); 
+		}
 		return "You already have the " + itemName + ".\n";
 
 	}
-	catch(Item.NoItemException e2) {
+	catch(Item.NoItemException e) {
 		return "There's no " + itemName + "here.\n";
 		
 	}
      } 
   }
-}
+
  		      
