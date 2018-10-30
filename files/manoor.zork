@@ -13,7 +13,7 @@ sit:You take a seat. Dang its dusty!
 ---
 sunflower,flower
 1
-smell:You smell the flower and get stung by a bee OUCH!!!!
+smell:You smell the flower and get stung by a bee. OUCH!!!!
 ---
 book
 7
@@ -63,7 +63,46 @@ kiss:You kiss the frog-statue, it turns into a not so charming prince.
 ---
 ===
 Rooms:  
+Foyer
+Contents:lamp
 
+---
+Lounge
+Contents:chair
+
+---
+Kitchen
+Contents:chocolate
+
+---
+Dining
+Contents:meal
+
+---
+Covered Patio
+Contents:frog-statue, sunflower,
+
+---
+Observatory
+Contents:telescope
+
+---
+Game Room
+Contents:chessboard, chess, poker
+
+---
+Theater
+Contents:projecter, popcorn
+
+---
+Master Bedroom
+Contents:doll
+
+---
+Office
+Contents:
+
+---
  
 
 
