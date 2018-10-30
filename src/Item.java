@@ -17,7 +17,7 @@ public class Item{
 
 	public Item(Scanner s){
 
-		String name = s.nextLine();		
+		//String name = s.nextLine();		
 		this.primaryName = s.nextLine();
 		if(primaryName.contains(",")){
 			for(int i = 0; i < primaryName.length(); i++){
@@ -25,13 +25,13 @@ public class Item{
 					String alias = primaryName.substring(i+1);
 					primaryName = primaryName.substring(0,i);
 					names.put(primaryName, alias);
-				//	System.out.println("alias is: " + alias);
+					System.out.println("alias is: " + alias);
 				}
 			}
 		}
-		System.out.println(primaryName);
+		System.out.println(primaryName + " = name");
 		this.weight = Integer.parseInt(s.nextLine());
-		System.out.println(weight);
+		System.out.println(weight + " = weight");
 		String line = s.nextLine();
 		while(!line.equals("---")){
 			for(int i = 0; i < line.length(); i++){
@@ -40,7 +40,7 @@ public class Item{
 					String reaction = line.substring(i+1);
 					String action = line.substring(0,i);
 					messages.put(action, reaction);
-				//	System.out.println(action + " does" + reaction);
+					System.out.println(action + " does" + reaction);
 					line = s.nextLine();
 				}
 			}

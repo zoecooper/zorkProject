@@ -33,6 +33,7 @@ public class Room {
 
         init();
         title = s.nextLine();
+	System.out.println(title);
         desc = "";
         if (title.equals(Dungeon.TOP_LEVEL_DELIM)) {
             throw new NoRoomException();
