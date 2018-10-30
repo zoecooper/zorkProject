@@ -113,7 +113,7 @@ public class GameState {
     void removeFromInventory(Item item){
 	    inventory.remove(item);
     }
-    ArrayList<String> getInventoryNamed(){
+    ArrayList<String> getInventoryNames(){
 	    ArrayList<String> invnamed = new ArrayList<String>();
 	    for(int i = 0; i < inventory.size(); i++){
 		    invnamed.add(inventory.get(i).getPrimaryName());
