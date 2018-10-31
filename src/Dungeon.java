@@ -39,6 +39,7 @@ public class Dungeon {
         this.name = name;
         this.entry = entry;
         rooms = new Hashtable<String,Room>();
+    	items = new Hashtable<String,Item>(); 
     }
 
     /**
@@ -48,7 +49,8 @@ public class Dungeon {
     public Dungeon(String filename, boolean initState) throws FileNotFoundException,
         IllegalDungeonFormatException {
 
-        init();
+       this.init();
+	
         this.filename = filename;
 
         Scanner s = new Scanner(new FileReader(filename));
@@ -69,9 +71,12 @@ public class Dungeon {
 
 	try {
             while (true) {
-                add(new Item(s));
+               Item x = new Item(s);
+	       this.add(x); 
             }
-        } catch (Exception e) { }
+        } catch (Item.NoItemException e) { 
+		System.out.println("hit the exception"); 
+	}
 
         // Throw away Rooms starter.
         if (!s.nextLine().equals(ROOMS_MARKER)) {
@@ -113,6 +118,7 @@ public class Dungeon {
     // is used.
     private void init() {
         rooms = new Hashtable<String,Room>();
+    	items = new Hashtable<String, Item>(); 
     }
 
     /*
