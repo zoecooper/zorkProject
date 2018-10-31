@@ -61,6 +61,7 @@ public class Item{
 		return messages.get(verb);
 	}
 	public Boolean goesBy(String name){
+		System.out.println(primaryName+ name);
 		if(names.get(primaryName).contains(name)){
 			return true;
 		}else{

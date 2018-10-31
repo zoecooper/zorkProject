@@ -18,11 +18,25 @@ public class CommandFactory {
     }
 
     public Command parse(String command) {
+	    String verb;
+	    String noun;
+	       if (command.equals("save")){
+                      return new SaveCommand("zork_save");
+                      
+         
+	       }
 	String parts[] = command.split("");
-    	String verb = parts[0];
-	String noun = parts.length >= 2 ? parts[1] : "";
-	if (verb.equals("save")){
-		return new SaveCommand(noun);
+    	verb = parts[0];
+
+	noun = parts.length >= 2 ? parts[1] : "";
+	if(command.contains("take")){
+                       return new TakeCommand(noun);
+               }
+	if(command.contains("drop")){
+		return new DropCommand(noun);
+	}
+	if(command.equals("lool")){
+		return new LookCommand();
 	}
 	
 	if(MOVEMENT_COMMANDS.contains(verb)) {

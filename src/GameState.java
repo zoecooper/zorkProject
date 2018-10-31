@@ -40,7 +40,7 @@ public class GameState {
 
         Scanner s = new Scanner(new FileReader(filename));
 
-        if (!s.nextLine().equals(SAVE_FILE_VERSION)) {
+        if (!s.nextLine().contains(SAVE_FILE_VERSION)) {
             throw new IllegalSaveFormatException("Save file not compatible.");
         }
 
