@@ -75,7 +75,7 @@ public class Dungeon {
 	       this.add(x); 
             }
         } catch (Item.NoItemException e) { 
-		System.out.println("hit the exception"); 
+	 
 	}
 
         // Throw away Rooms starter.
