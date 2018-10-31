@@ -2,7 +2,7 @@ Zoetopia
 Zork III
 ===
 Items:
-magicMushroom, mushroom
+magicMushroom,mushroom
 5
 toss:You toss the mushroom.
 bite:You ate the  mushroom. AH! It was poisonous. You pass out for a minute.
@@ -26,11 +26,11 @@ apple
 toss:You toss the apple.
 give:You give the apple to the meanest-looking stranger closest to you in hopes it is poisonous and will kill them.
 ---
-arcticFish, fish
+arcticFish,fish
 5
 eat:You eat a bite of the fish. It is very cold and gives you a brain-freeze.
 ---
-hibiscusFlower, hibiscus, flower
+hibiscusFlower,hibiscus,flower
 3
 smell:You smell the aroma of the beautiful red flower. Mmmmm...
 stomp:You stomp on the flower to press its leaves, it would be perfect to mix in with something...
@@ -46,12 +46,12 @@ rock
 place:You place the heavy rock filling your backpack down.
 kick:You kick the rock. Nothing happens.
 ---
-backpack, pack
+backpack,pack
 10
 wear:You put the backpack on.
 remove:You remove the backpack off your shoulders. What a relief!
 ---
-magicWand, wand
+magicWand,wand
 6
 wave:You wave your wand and all of the colors of the world around you turn into sepia. Cool!
 shake:You shake your wand up and everything begins floating.
@@ -67,7 +67,7 @@ basket
 ===
 Rooms:
 Atrium
-Contents: backpack, pack
+Contents: backpack
 You are in the center of a huge lobby. People and animals are buzzing around you, heading in various directions. There is an open, empty backpack on the sofa to your right. There is an elevator directly behind you, another to the west of you, and another to the east. There is a gateway in front of you.
 ---
 Main elevator
@@ -91,14 +91,14 @@ Contents: rock
 Your feet are submerged in dust, mud, and filth. The room is empty and looks like it was never completed. There is one exit behind you.
 ---
 Jail
-Contents: magicWand, wand
+Contents: magicWand
 You are in what appears to be a jail cell. The door you came in from is locked from this side. You cannot get out from here. It is a dead end. There is a chest here.
 ---
 Patio
 The sun shines across your face as you step out and surrounds you is a beautiful open terrace. There are tables full of animals grabbing afternoon cocktails. In front of you are the gardens around the mansion.
 ---
 Gardens
-Contents: hibiscusFlower, hibiscus, flower
+Contents: hibiscusFlower
 You are in the middle of an open field with rows of flowers. In the distance, you can see a long, narrow river splitting the two halves of the plain. You can go w to a gloomy area with lots of trees, you can go e where you see a seemingly large mountain hidden by clouds, or north to follow the river.  
 ---
 ===
