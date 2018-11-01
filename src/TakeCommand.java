@@ -4,6 +4,7 @@ class TakeCommand extends Command {
 	private String itemName;
 	
 	TakeCommand(String itemName) {
+		System.out.println("Item name is: " + itemName);
 		this.itemName = itemName;
 	}
 
@@ -20,7 +21,7 @@ class TakeCommand extends Command {
 		}
 		GameState.instance().addToInventory(theItem);
 		currentRoom.remove(theItem);
-		return itemName + "taken.\n";
+		return itemName + " taken.\n";
 
 	}
 	catch(Item.NoItemException e) {

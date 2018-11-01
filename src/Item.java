@@ -24,12 +24,13 @@ public class Item{
 		//while(!x.equals("---")){
 
 			this.primaryName = x;
+
 			if(primaryName.contains(",")){
 				for(int i = 0; i < primaryName.length(); i++){
 					if(primaryName.charAt(i) == ','){
 						String alias = primaryName.substring(i+1);
 						primaryName = primaryName.substring(0,i);
-						names.put(primaryName, alias);
+						names.put(alias, primaryName);
 		//				System.out.println("alias is: " + alias);
 					}
 				}	
@@ -61,11 +62,13 @@ public class Item{
 		return messages.get(verb);
 	}
 	public Boolean goesBy(String name){
-		if(names.get(primaryName).contains(name)){
+		if(names.containsKey(name)){
 			return true;
-		}else{
-			return false;
 		}
+		if(name.equals(this.primaryName)){
+			return true; 
+		}
+		return false;
 	}
 	public String toString(){
 		return primaryName;
