@@ -7,7 +7,6 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 
 public class GameState {
-	ArrayList<Item> inventory = new ArrayList<Item>();
 
     public static class IllegalSaveFormatException extends Exception {
         public IllegalSaveFormatException(String e) {
@@ -23,6 +22,7 @@ public class GameState {
 
     private static GameState theInstance;
     private Dungeon dungeon;
+    private ArrayList<Item> inventory;
     private Room adventurersCurrentRoom;
 
     static synchronized GameState instance() {
@@ -33,6 +33,7 @@ public class GameState {
     }
 
     private GameState() {
+	    inventory = new ArrayList<Item>();
     }
 
     void restore(String filename) throws FileNotFoundException,
@@ -96,7 +97,17 @@ public class GameState {
 	    return this.inventory;
     }
     Item getItemInVicinityNamed(String name) throws Item.NoItemException {
-	    return this.adventurersCurrentRoom.getItemNamed(name);
+	    for (Item item : inventory) {
+		    if (item.goesBy(name)) {
+			    return item;
+		    }
+	    }
+	    for (Item item : adventurersCurrentRoom.getContents()) {
+		    if (item.goesBy(name)) {
+			    return item;
+		    }
+	    }
+	    throw new Item.NoItemException();
     }
     Item getItemFromInventoryNamed(String name){
 	    for (int i = 0; i<inventory.size(); i++){
