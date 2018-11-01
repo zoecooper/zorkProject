@@ -5,7 +5,7 @@ Items:
 lamp
 8
 on:You turn on the lamp.
-Off:You turn off the lamp. Woah! You can not see anything. 
+Off:You turn off the lamp. Woah! You cannot see anything. 
 ---
 chair
 12
@@ -26,7 +26,7 @@ touch:You touch the doll, it winks and faintly giggles.
 ---
 chessboard, chess, board
 4
-move:You see the chess pieces move as if they are playing against eachother. 
+move:You see the chess pieces move as if they are playing against each other. 
 sound:The chess pieces scrape against the board creating a cringy noise.
 ---
 telescope
@@ -36,12 +36,12 @@ turn:You turn it to observe more stars but you see a shadow cross your gaze and 
 ---
 chocolate 
 2
-bite:You bite into it, staisfying your sweet tooth.
+bite:You bite into it, satisfying your sweet tooth.
 keep:You keep it and you share it with the doll.
 ---
 meal
 16
-smell:You smell the savory aroma of the food. Making you crave more chocolate but its all gone.
+smell:You smell the savory aroma of the food. Making you crave more chocolate but it is all gone.
 eat:You eat it since there is no more chocolate left.
 --- 
 projecter
@@ -54,7 +54,7 @@ munch:You munch on the stale popcorn. It makes your teeth hurt.
 ---
 poker
 5
-deal:You deal the crads to the empty chairs at the table and they begin to float as if they are playing.
+deal:You deal the cards to the empty chairs at the table and they begin to float as if they are playing.
 ---
 frog-statue
 89
@@ -65,7 +65,7 @@ kiss:You kiss the frog-statue, it turns into a not so charming prince.
 Rooms:  
 Foyer
 Contents:lamp
-You are in the middle of the room, as you look up you see a beautiful shiny chandelier. There is a rustic looking table in front of you with a flickering lmap on it. Infront of you is the lounge.  
+You are in the middle of the room, as you look up you see a beautiful shiny chandelier. There is a rustic looking table in front of you with a flickering lamp on it. In front of you is the lounge.  
 ---
 Lounge
 Contents:chair
@@ -73,7 +73,7 @@ This is a room that has multiple vintage chairs, in a semicircle with a tv in th
 ---
 Kitchen
 Contents:chocolate
-This is a bright and very vibrant room with marble countertops and glossy white cabniets. On the countertop you seee a clear jar filled with chocolates from all over the world.
+This is a bright and very vibrant room with marble countertops and glossy white cabniets. On the countertop you see a clear jar filled with chocolates from all over the world.
 ---
 Dining 
 Contents:meal
@@ -81,15 +81,15 @@ You are in a room with a big modern dining table that seats sixteen people. The 
 ---
 Covered Patio
 Contents:sunflower, frog-statue
-As you step out of the kicthen, you see a huge firepit in the middle of the patio surrounded by wooden patio chairs and couches. There are rows of sunflowers wraped around the patio. In a corner is a huge rustic frog-statue, which is a weird brownish gray color. Right behind you is the kitchen. 
+As you step out of the kitchen, you see a huge firepit in the middle of the patio surrounded by wooden patio chairs and couches. There are rows of sunflowers wrapped around the patio. In a corner is a huge rustic frog-statue, which is a weird brownish gray color. Right behind you is the kitchen. 
 ---
 Observatory
 Contents:telescope
-This is a room with a dome shape cieling, attached to the house from one side. Here lie all the astronomical equipments. On one side there is a enormus telescope extending out of the glass window to the nightly sky. 
+This is a room with a dome shape ceiling, attached to the house from one side. Here lie all the astronomical equipment's. On one side there is a enormus telescope extending out of the glass window to the nightly sky. 
 ---
 Game Room
 Contents:chessboard, chess, poker
-Pieces moving and music is playing as you enter this room, it is filled with games from many centuries. Surronding the room are wallpapers that are falling apart from the wall. 
+Pieces moving, and music is playing as you enter this room, it is filled with games from many centuries. Surrounding the room are wallpapers that are falling apart from the wall. 
 ---
 Theater
 Contents:projecter, popcorn
