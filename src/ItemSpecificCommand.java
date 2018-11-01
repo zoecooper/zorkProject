@@ -12,7 +12,7 @@ class ItemSpecificCommand extends Command {
     //execute() should go here
     public String execute()throws Item.NoItemException {
         
-        Item itemReferredTo;
+        Item itemReferredTo = null;
         try {
             itemReferredTo = GameState.instance().getItemInVicinityNamed(noun);
         } catch (Item.NoItemException e) {
@@ -21,7 +21,7 @@ class ItemSpecificCommand extends Command {
         
        String msg = itemReferredTo.getMessageForVerb(verb);
        System.out.println(itemReferredTo);
-        return (msg == null ?	
+        return (msg == null ?
             "Sorry, you can't " + verb + " the " + noun + "." : msg) + "\n";
     }
 } 
