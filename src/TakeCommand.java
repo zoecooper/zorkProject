@@ -37,7 +37,7 @@ class TakeCommand extends Command {
 
 	}
 	catch(Item.NoItemException e) {
-		return "There's no " + itemName + "here.\n";
+		return "There's no " + itemName + " here.\n";
 		
 	}
      } 
