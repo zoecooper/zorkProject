@@ -16,7 +16,7 @@ class MovementCommand extends Command{
 			return "\n" + nextRoom.describe() + "\n";
 		}
 		else{
-			return "You can't go" + dir + "\n";
+			return "You can't go" + dir + ".\n";
 		}
 
 	}	

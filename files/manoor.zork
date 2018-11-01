@@ -1,4 +1,4 @@
-BirdsNest
+Manoor
 Zork III
 ===
 Items:
@@ -65,25 +65,25 @@ kiss:You kiss the frog-statue, it turns into a not so charming prince.
 Rooms:  
 Foyer
 Contents:lamp
-
+You are in the middle of the room, as you look up you see a beautiful shiny chandelier. There is a rustic looking table in front of you with a flickering lmap on it. Infront of you is the lounge.  
 ---
 Lounge
 Contents:chair
-
+This is a room that has multiple vintage chairs, in a semicircle with a tv in the middle. There is a very well decorated kitchen in front of you. 
 ---
 Kitchen
 Contents:chocolate
-
+This is a bright and very vibrant room with marble countertops and glossy white cabniets. On the countertop you seee a clear jar filled with chocolates from all over the world. To the east is the game room, to the west is the dining room, and to the north there is a Covered Patio. 
 ---
-Dining
+Dining 
 Contents:meal
-
+You are in a room with a big modern dining table that seats sixteen people. The table is filled with food just waiting for you to eat it. To the west is the Observatory and to your east is the Kitchen. 
 ---
 Covered Patio
-Contents:frog-statue, sunflower,
+Contents:sunflower, frog-statue
 
 ---
-Observatory
+Obsrvatory
 Contents:telescope
 
 ---
@@ -100,15 +100,82 @@ Contents:doll
 
 ---
 Office
-Contents:
+Contents:book
 
 ---
- 
-
-
-
-
-
- 
-
+===
+Exits:
+Foyer
+n
+Lounge
+---
+Lounge
+s
+Foyer
+---
+Lounge
+n
+Kitchen
+---
+Kitchen
+s
+Lounge
+---
+Kitchen
+e
+Game Room
+---
+Kitchen
+w
+Dining
+---
+Kitchen
+n
+Covered Patio
+---
+Covered Patio
+s
+Kitchen
+---
+Dining 
+e
+Kitchen
+---
+Dining
+w
+Observatory
+---
+Observatory
+e
+Dining
+---
+Office 
+w
+Lounge
+---
+Office 
+n
+Master Bedroom
+---
+Master Bedroom
+s
+Office
+---
+Master Bedroom
+n
+Game Room
+---
+Game Room
+s
+Master Bedroom
+---
+Game Room
+w
+Kitchen
+---
+Game Room 
+n 
+Theater
+---
+===
 
