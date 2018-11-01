@@ -140,6 +140,24 @@ public class Room {
         beenHere = true;
         return description;
     }
+     public String describeLook() {
+        String description;
+       
+         description = title + "\n" + desc;
+      
+        for (Item item : contents) {
+            description += "\nThere is a " + item.getPrimaryName() + " here.";
+        }
+        if (contents.size() > 0) { description += "\n"; }
+       
+            for (Exit exit : exits) {
+                description += "\n" + exit.describe();
+          
+        }
+
+        return description;
+    }
+
     
     public Room leaveBy(String dir) {
         for (Exit exit : exits) {

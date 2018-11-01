@@ -12,7 +12,7 @@ class LookCommand extends Command {
 	}
 
 	String execute() {
-		return GameState.instance().getAdventurersCurrentRoom().describe();
+		return GameState.instance().getAdventurersCurrentRoom().describeLook();
 	}
 }
 
