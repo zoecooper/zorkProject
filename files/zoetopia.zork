@@ -43,10 +43,10 @@ unlock:You use the key to unlock the door.
 ---
 rock
 3
-place:You place the heavy rock filling your backpack down.
+place:You place the heavy rock in your bag filling your backpack down.
 kick:You kick the rock. Nothing happens.
 ---
-backpack,pack
+backpack,pack,bag
 10
 wear:You put the backpack on.
 remove:You remove the backpack off your shoulders. What a relief!
