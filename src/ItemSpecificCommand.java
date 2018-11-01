@@ -20,7 +20,7 @@ class ItemSpecificCommand extends Command {
         }
         
        String msg = itemReferredTo.getMessageForVerb(verb);
-       System.out.println(itemReferredTo);
+   
         return (msg == null ?
             "Sorry, you can't " + verb + " the " + noun + "." : msg) + "\n";
     }

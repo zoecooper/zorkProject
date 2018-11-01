@@ -4,7 +4,7 @@ class TakeCommand extends Command {
 	private String itemName;
 	
 	TakeCommand(String itemName) {
-		System.out.println("Item name is: " + itemName);
+//		System.out.println("Item name is: " + itemName);
 		this.itemName = itemName;
 	}
 
