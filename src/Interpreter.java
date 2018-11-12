@@ -8,7 +8,7 @@ public class Interpreter {
                                     // singleton
 
     public static String USAGE_MSG = 
-        "Usage: Interpreter dungeonFile.zork|saveFile.sav.";
+        "Usage: Interpreter zorkFile.zork|saveFile.sav.";
 
     public static void main(String args[]) {
 
@@ -23,8 +23,7 @@ public class Interpreter {
         try {
             state = GameState.instance();
             if (args[0].endsWith(".zork")) {
-		    Dungeon x = new Dungeon(args[0],true);
-                state.initialize(x);
+                state.initialize(new Dungeon(args[0]));
                 System.out.println("\nWelcome to " + 
                     state.getDungeon().getName() + "!");
             } else if (args[0].endsWith(".sav")) {

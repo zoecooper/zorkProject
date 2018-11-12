@@ -1,5 +1,4 @@
 
-
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.IOException;
@@ -14,8 +13,8 @@ public class Room {
     private String title;
     private String desc;
     private boolean beenHere;
-    private ArrayList<Exit> exits;
     private ArrayList<Item> contents;
+    private ArrayList<Exit> exits;
 
     Room(String title) {
         init();
@@ -28,7 +27,18 @@ public class Room {
         this(s, d, true);
     }
 
-    Room(Scanner s, Dungeon d, boolean initState) throws NoRoomException,//adding init
+    /** Given a Scanner object positioned at the beginning of a "room" file
+        entry, read and return a Room object representing it. 
+        @param d The containing {@link Dungeon} object, necessary to 
+        retrieve {@link Item} objects.
+        @param initState should items listed for this room be added to it?
+        @throws NoRoomException The reader object is not positioned at the
+        start of a room entry. A side effect of this is the reader's cursor
+        is now positioned one line past where it was.
+        @throws IllegalDungeonFormatException A structural problem with the
+        dungeon file itself, detected when trying to read this room.
+     */
+    Room(Scanner s, Dungeon d, boolean initState) throws NoRoomException,
         Dungeon.IllegalDungeonFormatException {
 
         init();
@@ -117,13 +127,17 @@ public class Room {
                         "No such item '" + itemName + "'");
                 }
             }
-            s.nextLine(); 
+            s.nextLine();  // Consume "---".
         }
     }
 
     public String describe() {
+        return describe(false);
+    }
+
+    public String describe(boolean fullDesc) {
         String description;
-        if (beenHere) {
+        if (beenHere && !fullDesc) {
             description = title;
         } else {
             description = title + "\n" + desc;
@@ -132,7 +146,7 @@ public class Room {
             description += "\nThere is a " + item.getPrimaryName() + " here.";
         }
         if (contents.size() > 0) { description += "\n"; }
-        if (!beenHere) {
+        if (!beenHere || fullDesc) {
             for (Exit exit : exits) {
                 description += "\n" + exit.describe();
             }
@@ -140,30 +154,12 @@ public class Room {
         beenHere = true;
         return description;
     }
-     public String describeLook() {
-        String description;
-       
-         description = title + "\n" + desc;
-      
-        for (Item item : contents) {
-            description += "\nThere is a " + item.getPrimaryName() + " here.";
-        }
-        if (contents.size() > 0) { description += "\n"; }
-       
-            for (Exit exit : exits) {
-                description += "\n" + exit.describe();
-          
-        }
-
-        return description;
-    }
-
     
     public Room leaveBy(String dir) {
         for (Exit exit : exits) {
             if (exit.getDir().equals(dir)) {
                 return exit.getDest();
-	    }
+            }
         }
         return null;
     }
@@ -186,8 +182,7 @@ public class Room {
                 return item;
             }
         }
-       // throw new Item.NoItemException();
-       return null;
+        throw new Item.NoItemException();
     }
 
     ArrayList<Item> getContents() {

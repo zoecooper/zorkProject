@@ -1,3 +1,4 @@
+
 class ItemSpecificCommand extends Command {
 
     private String verb;
@@ -9,8 +10,7 @@ class ItemSpecificCommand extends Command {
         this.noun = noun;
     }
 
-    //execute() should go here
-    public String execute()throws Item.NoItemException {
+    public String execute() {
         
         Item itemReferredTo = null;
         try {
@@ -19,9 +19,8 @@ class ItemSpecificCommand extends Command {
             return "There's no " + noun + " here.";
         }
         
-       String msg = itemReferredTo.getMessageForVerb(verb);
-   
-        return (msg == null ?
+        String msg = itemReferredTo.getMessageForVerb(verb);
+        return (msg == null ? 
             "Sorry, you can't " + verb + " the " + noun + "." : msg) + "\n";
     }
-} 
+}

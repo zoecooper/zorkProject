@@ -38,7 +38,9 @@ public class Exit {
         dir = s.nextLine();
         dest = d.getRoom(s.nextLine());
         
-        // I'm an Exit object. Add me as an exit to my source Room.
+        // I'm an Exit object. Great. Add me as an exit to my source Room too,
+        // though.
+        System.out.println("src = " + srcTitle);
         src.addExit(this);
 
         // throw away delimiter
