@@ -44,6 +44,15 @@ public class Character {
         }
     }
 
+    /**
+     * Gets the health of a character in a room.
+     * @return the character's health
+     * @author ZC
+     */
+    int getHealth() {
+        return health;
+    }
+
    /**
     * Gets the name of the character.
     * @return a string that holds the name of the character
