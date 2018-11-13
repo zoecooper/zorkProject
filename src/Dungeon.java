@@ -7,9 +7,9 @@ import java.io.FileReader;
 import java.io.PrintWriter;
 
 /**
- * This class loads a new Dungeon up for the player to use or loads one up from a previously saved game.
+ * A <tt>Dungeon</tt> represents the area the player is in and holds rooms, exits, characters, and items.
+ * @author ZC
  */
-
 public class Dungeon {
 
     public static class IllegalDungeonFormatException extends Exception {
@@ -163,15 +163,51 @@ public class Dungeon {
         }
     }
 
+    /**
+     * Gets the entry room of a dungeon.
+     * @return the room object
+     * @author ZC
+     */
     public Room getEntry() { return entry; }
+
+    /**
+     * Gets the name of a dungeon.
+     * @return the dungeon name string
+     * @author ZC
+     */
     public String getName() { return name; }
+
+    /**
+     * Gets the name of the file the scanner object will read from with the dungeon and its information.
+     * @return the string of the filename
+     * @author ZC
+     */
     public String getFilename() { return filename; }
+
+    /**
+     * Adds a room to a dungeon.
+     * @param room room object
+     * @author ZC
+     */
     public void add(Room room) { rooms.put(room.getTitle(),room); }
+
+    /**
+     * Adds an item to a dungeon.
+     * @param item item object
+     * @author ZC
+     * */
     public void add(Item item) { items.put(item.getPrimaryName(),item); }
 
+
+    /** 
+     * Gets the a room in a dungeon.
+     * @param roomTitle string that is the title of the room
+     * @return the room object
+     */
     public Room getRoom(String roomTitle) {
         return rooms.get(roomTitle);
     }
+
 
     /**
      * Get the Item object whose primary name is passed. This has nothing to
