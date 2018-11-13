@@ -6,6 +6,10 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.PrintWriter;
 
+/**
+ * This class loads a new Dungeon up for the player to use or loads one up from a previously saved game.
+ */
+
 public class Dungeon {
 
     public static class IllegalDungeonFormatException extends Exception {
