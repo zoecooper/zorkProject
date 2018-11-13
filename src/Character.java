@@ -62,7 +62,7 @@ public class Character {
     }
 
    /**
-    * Gives the name of the character in the string.
+    * Gives the name of the character in a string.
     * @return a string of the character's name
     * @author ZC
     */
