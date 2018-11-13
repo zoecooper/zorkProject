@@ -36,6 +36,7 @@ public class Dungeon {
     private Room entry;
     private Hashtable<String,Room> rooms;
     private Hashtable<String,Item> items;
+    //characters hashtable
     private Hashtable<String,Character> characters;
     private String filename;
 
