@@ -1,7 +1,10 @@
 
 import java.util.Scanner;
 
-
+/**
+ * The Interpreter class starts up a dungeon for the player to use or restores one from a previously saved game. It also prompts the user for game play and can quit the game if they decide to.
+ * @author ZC
+ */
 public class Interpreter {
 
     private static GameState state; // not strictly necessary; GameState is 
@@ -10,6 +13,11 @@ public class Interpreter {
     public static String USAGE_MSG = 
         "Usage: Interpreter zorkFile.zork|saveFile.sav.";
 
+    /**
+    * Prints a usage message if there are no arguments given and checks if they want to play a new game or play from a saved game.
+    * @param args[] string that is the number of arguments the user types in when they wish to play
+    * @author ZC
+    */
     public static void main(String args[]) {
 
         if (args.length < 1) {
@@ -54,7 +62,13 @@ public class Interpreter {
             e.printStackTrace(); 
         }
     }
-
+    
+    /**
+     * Prompts the user to play the game and reads in from the command line.
+     * @param commandLine scanner 
+     * @return the string that the user typed in
+     * @author ZC
+     */
     private static String promptUser(Scanner commandLine) {
 
         System.out.print("> ");
