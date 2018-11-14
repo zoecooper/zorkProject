@@ -26,7 +26,7 @@ public class Dungeon {
     public static String ROOMS_MARKER = "Rooms:";
     public static String EXITS_MARKER = "Exits:";
     public static String ITEMS_MARKER = "Items:";
-    public static String ITEMS_MARKER = "Characters:";
+    public static String CHARACTERS_MARKER = "Characters:";
     
     // Variables relating to game state (.sav) storage.
     static String FILENAME_LEADER = "Dungeon file: ";
