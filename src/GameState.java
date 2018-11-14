@@ -7,6 +7,12 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 
+/**
+ * <tt>GameState<tt> delivers a way for the user to save its current progress in th
+ *  game and restore the user to its last saved progress.
+ *  @author NC 
+ */
+
 public class GameState {
 
     public static class IllegalSaveFormatException extends Exception {
@@ -37,7 +43,9 @@ public class GameState {
     private GameState() {
         inventory = new ArrayList<Item>();
     }
-
+    /** Returns the players current weight of his/her inventory.
+     * @author NC
+     */ 
     int getAdventurersCurrentWeight() {
         int total = 0;
         for (Item item : inventory) {
@@ -45,7 +53,13 @@ public class GameState {
         }
         return total;
     }
-
+    /**
+     * Brings the player back to his/her previously saved state in the game with the 
+     * saved inventory, current room, etc.
+     * @param filename name of file the user is playing the game with.
+     * @throws FileNotFoundException
+     * @author NC
+     */ 
     void restore(String filename) throws FileNotFoundException,
         IllegalSaveFormatException, Dungeon.IllegalDungeonFormatException {
 
@@ -85,7 +99,11 @@ public class GameState {
             }
         }
     }
-
+    /** Saves the player's current state in the game to a default save file. The user can then enter
+     * the default save file and play the game from he/she last saved.
+     * @param saveName the filename the the current state of game is saved to
+     * @author NC
+     */ 
     void store(String saveName) throws IOException {
         String filename = saveName + SAVE_FILE_EXTENSION;
         PrintWriter w = new PrintWriter(new FileWriter(filename));
@@ -107,7 +125,10 @@ public class GameState {
         this.dungeon = dungeon;
         adventurersCurrentRoom = dungeon.getEntry();
     }
-
+    /**
+     * Returns the names of the items in the player's inventory.
+     * @author NC
+     */ 
     ArrayList<String> getInventoryNames() {
         ArrayList<String> names = new ArrayList<String>();
         for (Item item : inventory) {
@@ -115,15 +136,29 @@ public class GameState {
         }
         return names;
     }
-
+ 
+    /**
+     * Adds an item to its inventory.
+     * @param item the item that will be added to the inventory
+     * @author NC
+     */ 
     void addToInventory(Item item) /* throws TooHeavyException */ {
         inventory.add(item);
     }
 
+    /**
+     * Removes an item from its inventory.
+     * @param item the item that will be added to the inventory
+     * @author NC
+     */
     void removeFromInventory(Item item) {
         inventory.remove(item);
     }
 
+    /** Returns the primary name of an item in the current room the player is in.
+     * @param name of the item
+     * @throws NoItemException
+     */  
     Item getItemInVicinityNamed(String name) throws Item.NoItemException {
 
         // First, check inventory.
@@ -143,6 +178,10 @@ public class GameState {
         throw new Item.NoItemException();
     }
 
+    /** Returns the primary name of an item in the player's inventory.
+     * @param name of the item
+     * @throws NoItemException
+     */
     Item getItemFromInventoryNamed(String name) throws Item.NoItemException {
 
         for (Item item : inventory) {
@@ -153,14 +192,25 @@ public class GameState {
         throw new Item.NoItemException();
     }
 
+
+    /**Returns the player's current room.
+     * @author NC
+     */ 
     Room getAdventurersCurrentRoom() {
         return adventurersCurrentRoom;
     }
 
+    /**Sets the current room of the player.
+     * @param room
+     * @author NC
+     */ 
     void setAdventurersCurrentRoom(Room room) {
         adventurersCurrentRoom = room;
     }
 
+    /**Returns the player's current dungeon.
+     * @author NC
+     */
     Dungeon getDungeon() {
         return dungeon;
     }
