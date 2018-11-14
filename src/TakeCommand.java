@@ -7,6 +7,10 @@ class TakeCommand extends Command {
         this.itemName = itemName;
     }
 
+    /**
+     * Allows user to add an item to its inventory typing the command "take".
+     * @author NC
+     */ 
     public String execute() {
         if (itemName == null || itemName.trim().length() == 0) {
             return "Take what?\n";
