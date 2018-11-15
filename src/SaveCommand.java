@@ -13,6 +13,10 @@ class SaveCommand extends Command {
         }
     }
 
+    /**
+     * Allows the player to save his/her progress  by typing "save".
+     * @author NC
+     */ 
     public String execute() {
         try {
             GameState.instance().store(saveFilename);

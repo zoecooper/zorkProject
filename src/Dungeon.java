@@ -132,7 +132,7 @@ public class Dungeon {
         items = new Hashtable<String,Item>();
     }
 
-    /*
+    /**
      * Store the current (changeable) state of this dungeon to the writer
      * passed.
      */
@@ -145,7 +145,7 @@ public class Dungeon {
         w.println(TOP_LEVEL_DELIM);
     }
 
-    /*
+    /**
      * Restore the (changeable) state of this dungeon to that reflected in the
      * reader passed.
      */
@@ -203,7 +203,7 @@ public class Dungeon {
 
 
     /** 
-     * Gets the a room in a dungeon.
+     * Gets a room in a dungeon.
      * @param roomTitle string that is the title of the room
      * @return the room object
      */

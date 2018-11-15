@@ -20,7 +20,7 @@ class CharacterSpecificCommand extends Command {
     *@author ZC
     */
     public String execute() {
-        
+       /* 
         Character characterReferredTo = null;
         try {
             characterReferredTo = GameState.instance().getCharacterInVicinityNamed(noun);
@@ -32,4 +32,7 @@ class CharacterSpecificCommand extends Command {
         return (msg == null ? 
             "Sorry, you can't " + verb + " the " + noun + "." : msg) + "\n";
     }
+    */
+    return "Zoe";	    
+}
 }
