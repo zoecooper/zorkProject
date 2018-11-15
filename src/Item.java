@@ -54,7 +54,6 @@ public class Item {
     /**
      * Gets the weight of an item in a room.
      * @return the item's weight
-     * @author ZC
      */
     int getWeight() {
         return weight;
@@ -63,8 +62,7 @@ public class Item {
    /**
     * Compares the primary name with alias name.
     * @param name string of the item
-    * @return a true if the primary name/alias name equals the name or a false if neither of those work.
-    * @author ZC
+    * @return a true if the primary name/alias name equals the name or a false if neither of those work
     */ 
     boolean goesBy(String name) {
         if (this.primaryName.equals(name)) {
@@ -81,7 +79,6 @@ public class Item {
    /**
     * Gets the name of the item.
     * @return a string that holds the name of the item
-    * @author ZC
     */
     String getPrimaryName() { return primaryName; }
     
@@ -89,7 +86,6 @@ public class Item {
     * Gets the message of the command.
     * @param verb string that is the command the user wants to use on the item
     * @return a string of the message
-    * @author ZC
     */
     public String getMessageForVerb(String verb) {
         return messages.get(verb);
@@ -98,7 +94,6 @@ public class Item {
    /**
     * Gives the name of the item in a string.
     * @return a string of the item's name
-    * @author ZC
     */
     public String toString() {
         return primaryName;
