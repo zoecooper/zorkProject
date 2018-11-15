@@ -1,13 +1,28 @@
 
 import java.util.List;
 import java.util.Arrays;
-
+/**
+ * Takes in the users commands as strings, parse them and 
+ * tries to determine what the player is trying to accomplish. 
+ * Commands are matched to the valid sub-command classes, they are 
+ * created and executed. 
+ * Will return a string to be printed, letting the player know the 
+ * results of their actions and inputs.
+ * 
+ * @author AN
+ */ 
 public class CommandFactory {
 
     private static CommandFactory theInstance;
+    /**
+     * List of all the possible command which the player can use
+     */ 
     public static List<String> MOVEMENT_COMMANDS = 
         Arrays.asList("n","w","e","s","u","d" );
-
+    /**
+     * @return creates an instance of the CommandFactory if one is not 
+     * already created. 
+     */ 
     public static synchronized CommandFactory instance() {
         if (theInstance == null) {
             theInstance = new CommandFactory();
@@ -17,7 +32,12 @@ public class CommandFactory {
 
     private CommandFactory() {
     }
-
+    /**
+     * Receives the users command and attempts to parse it into Strings 
+     * which are stored in an array.
+     * @param command
+     * @return the specific command to execute
+     */    	
     public Command parse(String command) {
         String parts[] = command.split(" ");
         String verb = parts[0];
