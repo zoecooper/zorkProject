@@ -17,7 +17,6 @@ class CharacterSpecificCommand extends Command {
     *Executes the command for the character.
     *@return a string saying the desired character does not exist in the room if it does not or a string saying the user cannot do something to the character given if they did not provide the correct command for that specific character
     *@throws NoCharacterException if the character given is not the in room the adventurer is currently in
-    *@author ZC
     */
     public String execute() {
        /* 

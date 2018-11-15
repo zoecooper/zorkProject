@@ -16,7 +16,6 @@ public class Interpreter {
     /**
     * Prints a usage message if there are no arguments given and checks if they want to play a new game or play from a saved game.
     * @param args[] string that is the number of arguments the user types in when they wish to play
-    * @author ZC
     */
     public static void main(String args[]) {
 
@@ -67,7 +66,6 @@ public class Interpreter {
      * Prompts the user to play the game and reads in from the command line.
      * @param commandLine scanner 
      * @return the string that the user typed in
-     * @author ZC
      */
     private static String promptUser(Scanner commandLine) {
 

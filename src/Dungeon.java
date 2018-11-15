@@ -169,35 +169,30 @@ public class Dungeon {
     /**
      * Gets the entry room of a dungeon.
      * @return the room object
-     * @author ZC
      */
     public Room getEntry() { return entry; }
 
     /**
      * Gets the name of a dungeon.
      * @return the dungeon name string
-     * @author ZC
      */
     public String getName() { return name; }
 
     /**
      * Gets the name of the file the scanner object will read from with the dungeon and its information.
      * @return the string of the filename
-     * @author ZC
      */
     public String getFilename() { return filename; }
 
     /**
      * Adds a room to a dungeon.
      * @param room room object
-     * @author ZC
      */
     public void add(Room room) { rooms.put(room.getTitle(),room); }
 
     /**
      * Adds an item to a dungeon.
      * @param item item object
-     * @author ZC
      * */
     public void add(Item item) { items.put(item.getPrimaryName(),item); }
 
@@ -216,6 +211,9 @@ public class Dungeon {
      * Get the Item object whose primary name is passed. This has nothing to
      * do with where the Adventurer might be, or what's in his/her inventory,
      * etc.
+     * @param primaryItemName string that is the primary name of an item not its alias
+     * @return an item regardless of its alias or primary name
+     * @throws a NoItemException if the item is not found
      */
     public Item getItem(String primaryItemName) throws Item.NoItemException {
         
