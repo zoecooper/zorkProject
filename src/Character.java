@@ -47,7 +47,6 @@ public class Character {
     /**
      * Gets the health of a character in a room.
      * @return the character's health
-     * @author ZC
      */
     int getHealth() {
         return health;
@@ -56,7 +55,6 @@ public class Character {
    /**
     * Gets the name of the character.
     * @return a string that holds the name of the character
-    * @author ZC
     */
     String getPrimaryName() { return primaryName; }
 
@@ -64,7 +62,6 @@ public class Character {
     * Gets the message of the command.
     * @param verb string that is the command the user wants to use on the character
     * @return a string of the message
-    * @author ZC
     */
     public String getMessageForVerb(String verb) {
         return messages.get(verb);
@@ -73,7 +70,6 @@ public class Character {
    /**
     * Gives the name of the character in a string.
     * @return a string of the character's name
-    * @author ZC
     */
     public String toString() {
         return primaryName;
