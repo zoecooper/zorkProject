@@ -4,8 +4,9 @@
  * @author AN
  */
 public class VerboseCommand extends Command {
-}
+	public VerboseCommand(){
+	}
 	
-	public string execute(){
+	public String execute(){
 	}
 }
