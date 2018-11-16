@@ -9,3 +9,4 @@ class HealthCommand extends Command {
        return "Nadiya";
        }
 }
+

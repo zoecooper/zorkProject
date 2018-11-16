@@ -118,6 +118,9 @@ public class GameState {
         w.close();
     }
 
+    /**Sets the players current room to the entry of the players dungeon.
+     * @param dungeon
+     */ 
     void initialize(Dungeon dungeon) {
         this.dungeon = dungeon;
         adventurersCurrentRoom = dungeon.getEntry();
