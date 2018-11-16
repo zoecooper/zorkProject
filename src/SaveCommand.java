@@ -1,6 +1,10 @@
 
 class SaveCommand extends Command {
 
+    /**
+     * Allows the player to save his/her progress  by typing "save".i
+     * @author NC
+     */
     private static String DEFAULT_SAVE_FILENAME = "zork";
 
     private String saveFilename;
@@ -14,8 +18,7 @@ class SaveCommand extends Command {
     }
 
     /**
-     * Allows the player to save his/her progress  by typing "save".
-     * @author NC
+     * Executes the command so the player may save progress.
      */ 
     public String execute() {
         try {

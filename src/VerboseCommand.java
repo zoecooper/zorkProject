@@ -8,5 +8,6 @@ public class VerboseCommand extends Command {
 	}
 	
 	public String execute(){
+		return "Aneesa";
 	}
 }

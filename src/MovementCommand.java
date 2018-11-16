@@ -1,8 +1,11 @@
 
 class MovementCommand extends Command {
 
-    private String dir;
-                       
+
+    /**Allows player to move in the direction desired by typing the direction commands "w","e","n","s","u", or "d".
+     * @author NC
+     */ 
+    private String dir;    
 
     MovementCommand(String dir) {
         this.dir = dir;
@@ -10,6 +13,8 @@ class MovementCommand extends Command {
 
 
 	
+    /**Execute the command for the player to move through the game with directions.
+     */ 
     
     public String execute() {
         Room currentRoom = GameState.instance().getAdventurersCurrentRoom();

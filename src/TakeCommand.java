@@ -1,4 +1,6 @@
-
+/**
+     * Allows user to add an item to its inventory typing the command "take".
+     */
 class TakeCommand extends Command {
 
     private String itemName;
@@ -8,8 +10,7 @@ class TakeCommand extends Command {
     }
 
     /**
-     * Allows user to add an item to its inventory typing the command "take".
-     * @author NC
+     * Executes the take command for the item.
      */ 
     public String execute() {
         if (itemName == null || itemName.trim().length() == 0) {
