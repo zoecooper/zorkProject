@@ -8,4 +8,4 @@ class HealthCommand extends Command {
        public String execute(){
        return "Nadiya";
        }
-
+}
