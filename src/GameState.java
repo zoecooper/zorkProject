@@ -44,7 +44,6 @@ public class GameState {
         inventory = new ArrayList<Item>();
     }
     /** Returns the players current weight of his/her inventory.
-     * @author NC
      */ 
     int getAdventurersCurrentWeight() {
         int total = 0;
@@ -58,7 +57,6 @@ public class GameState {
      * saved inventory, current room, etc.
      * @param filename name of file the user is playing the game with.
      * @throws FileNotFoundException
-     * @author NC
      */ 
     void restore(String filename) throws FileNotFoundException,
         IllegalSaveFormatException, Dungeon.IllegalDungeonFormatException {
@@ -102,7 +100,6 @@ public class GameState {
     /** Saves the player's current state in the game to a default save file. The user can then enter
      * the default save file and play the game from he/she last saved.
      * @param saveName the filename the the current state of game is saved to
-     * @author NC
      */ 
     void store(String saveName) throws IOException {
         String filename = saveName + SAVE_FILE_EXTENSION;
@@ -121,13 +118,15 @@ public class GameState {
         w.close();
     }
 
+    /**Sets the players current room to the entry of the players dungeon.
+     * @param dungeon
+     */ 
     void initialize(Dungeon dungeon) {
         this.dungeon = dungeon;
         adventurersCurrentRoom = dungeon.getEntry();
     }
     /**
      * Returns the names of the items in the player's inventory.
-     * @author NC
      */ 
     ArrayList<String> getInventoryNames() {
         ArrayList<String> names = new ArrayList<String>();
@@ -140,7 +139,6 @@ public class GameState {
     /**
      * Adds an item to its inventory.
      * @param item the item that will be added to the inventory
-     * @author NC
      */ 
     void addToInventory(Item item) /* throws TooHeavyException */ {
         inventory.add(item);
@@ -149,7 +147,6 @@ public class GameState {
     /**
      * Removes an item from its inventory.
      * @param item the item that will be added to the inventory
-     * @author NC
      */
     void removeFromInventory(Item item) {
         inventory.remove(item);
@@ -194,7 +191,6 @@ public class GameState {
 
 
     /**Returns the player's current room.
-     * @author NC
      */ 
     Room getAdventurersCurrentRoom() {
         return adventurersCurrentRoom;
@@ -202,14 +198,12 @@ public class GameState {
 
     /**Sets the current room of the player.
      * @param room
-     * @author NC
-     */ 
+     */
     void setAdventurersCurrentRoom(Room room) {
         adventurersCurrentRoom = room;
     }
 
     /**Returns the player's current dungeon.
-     * @author NC
      */
     Dungeon getDungeon() {
         return dungeon;

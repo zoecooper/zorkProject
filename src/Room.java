@@ -3,7 +3,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.IOException;
 import java.io.PrintWriter;
-
+/**
+ * Creates and manages Room objects
+ * @author AN
+ */ 
 public class Room {
 
     class NoRoomException extends Exception {}
@@ -15,7 +18,9 @@ public class Room {
     private boolean beenHere;
     private ArrayList<Item> contents;
     private ArrayList<Exit> exits;
-
+    /**
+     * @param title
+     */ 	
     Room(String title) {
         init();
         this.title = title;
@@ -105,7 +110,13 @@ public class Room {
         }
         w.println(Dungeon.SECOND_LEVEL_DELIM);
     }
-
+    /**
+     *Given a Scanner object at the beginning of a Room file entry from 
+     *a .sav file, reads and returns a Room object that represents it.
+     *@param s
+     *@param d
+     *@throws GameState.IllegalSaveFormatException
+     */
     void restoreState(Scanner s, Dungeon d) throws 
         GameState.IllegalSaveFormatException {
 
@@ -130,7 +141,7 @@ public class Room {
             s.nextLine();  // Consume "---".
         }
     }
-
+    
     public String describe() {
         return describe(false);
     }
@@ -154,7 +165,15 @@ public class Room {
         beenHere = true;
         return description;
     }
-    
+    /**
+     * Takes a single character, representing a direction which 
+     * to exit a Room object. If the exit direction is present,
+     * the exit destination Room object is returned, otherwise the
+     * return value is set to null.
+     * @param dir
+     * @return the destination Room object
+     * @return null
+     */ 
     public Room leaveBy(String dir) {
         for (Exit exit : exits) {
             if (exit.getDir().equals(dir)) {
@@ -163,19 +182,38 @@ public class Room {
         }
         return null;
     }
-
+    /**
+     * Takes an Exit object and adds it to the Room's exit array list
+     * @param exit
+     */ 
     void addExit(Exit exit) {
         exits.add(exit);
     }
-
+    /**
+     * Takes in an Item object and adds it to the Room's contents
+     * array list.
+     * @param item
+     */ 
     void add(Item item) {
         contents.add(item);
     }
-
+    /**
+     * Takes in an Item object and removes it from the Room's
+     * contents array list.
+     * @param item
+     */ 
     void remove(Item item) {
         contents.remove(item);
     }
-
+    /**
+     * Takes in a String as a search parameter, representing the primary 
+     * name of an Item. Checks the room's contents array list for a match. 
+     * If there is a match it returns an Item, if not it throws an exception.
+     * @param name
+     * @return item
+     * @return contents
+     * @throws Item.NoItemException
+     */ 
     Item getItemNamed(String name) throws Item.NoItemException {
         for (Item item : contents) {
             if (item.goesBy(name)) {

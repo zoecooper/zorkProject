@@ -1,5 +1,4 @@
 /**
- * @return a string from the execute command
  * @author AN
  */
 abstract class Command {
