@@ -16,8 +16,7 @@ class ItemSpecificCommand extends Command {
    /**
     *Executes the command for the item.
     *@return a string saying the desired item does not exist in the room if it does not or a string saying the user cannot do something to the item given if they did not provide the correct command for that specific item
-    *@throws NoItemException if the item given is not the in room the adventurer is currently in
-    *@author ZC
+    *@throws NoItemException if the item given is not the in room the adventurer is currently inC
     */
     public String execute() {
         
