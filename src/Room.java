@@ -3,7 +3,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.IOException;
 import java.io.PrintWriter;
-
+/**
+ * Creates and manages Room objects
+ * @author AN
+ */ 
 public class Room {
 
     class NoRoomException extends Exception {}
