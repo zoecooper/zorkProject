@@ -3,7 +3,6 @@ class MovementCommand extends Command {
 
 
     /**Allows player to move in the direction desired by typing the direction commands "w","e","n","s","u", or "d".
-     * @author NC
      */ 
     private String dir;    
 
