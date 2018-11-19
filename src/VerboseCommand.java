@@ -1,6 +1,6 @@
 /**
  * It will allow the user to continuously get a 
- * description of the room from .zork
+ * description of the room from the .zork file
  * @author AN
  */
 public class VerboseCommand extends Command {
