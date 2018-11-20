@@ -89,7 +89,7 @@ public class Room {
         beenHere = false;
     }
     /**
-     * Returns Room objects title name
+     * Returns the Room objects title name
      * @return String title name
      */ 
     String getTitle() { return title; }
