@@ -98,4 +98,12 @@ public class Item {
     public String toString() {
         return primaryName;
     }
+    /**
+     * Moves the player from its current room to a different room in the dungeon. 
+     * There is a set room that the player would always teleport to during this event.
+     */ 
+    public void teleport() {
+	    Item newItem = null;
+	   
+    }
 }

@@ -33,7 +33,7 @@ public class CommandFactory {
     }
     /**
      * Receives the users command and attempts to parse it into Strings 
-     * which are stored in an array.
+     * which allows the player to call on and execute specific commands.
      * There is a multiple part command composed of a verb "key word" 
      * and at least one noun. Multiple worded nouns are concatenated into
      * a single noun and then parsed by the command code. 
