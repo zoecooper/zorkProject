@@ -9,7 +9,7 @@ class ConsumeCommand extends Command {
 	/**
 	 * A contructor setting the item name of the item wanting to be eaten.
 	 */ 
-    	ConsumeeCommand(String itemName) {
+    	ConsumeCommand(String itemName) {
         	this.itemName = itemName;
     	}
 	/**
