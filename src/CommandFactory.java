@@ -1,12 +1,11 @@
-
 import java.util.List;
 import java.util.Arrays;
 /**
- * Takes in the users commands as strings, parse them and 
+ * Takes in the users commands as strings, parses them and 
  * tries to determine what the player is trying to accomplish. 
- * Commands are matched to the valid sub-command classes, they are 
- * created and executed. 
- * Will return a string to be printed, letting the player know the 
+ * If parsed the commands are matched to the valid sub-command 
+ * classes, they are created and executed. 
+ * It returns a string to be printed out, letting the player know the 
  * results of their actions and inputs.
  * 
  * @author AN
@@ -35,6 +34,9 @@ public class CommandFactory {
     /**
      * Receives the users command and attempts to parse it into Strings 
      * which are stored in an array.
+     * There is a multiple part command composed of a verb "key word" 
+     * and at least one noun. Multiple worded nouns are concatenated into
+     * a single noun and then parsed by the command code. 
      * @param command
      * @return the specific command to execute
      */    	
