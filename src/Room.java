@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.IOException;
@@ -89,13 +88,19 @@ public class Room {
         exits = new ArrayList<Exit>();
         beenHere = false;
     }
-
+    /**
+     * Returns Room objects title name
+     * @return String title name
+     */ 
     String getTitle() { return title; }
-
+    /**
+     * Sets the Room objects desc variable
+     * @param desc
+     */ 
     void setDesc(String desc) { this.desc = desc; }
 
     /*
-     * Store the current (changeable) state of this room to the writer
+     * Stores the current "changeable" state of this room to the writer
      * passed.
      */
     void storeState(PrintWriter w) throws IOException {
@@ -112,7 +117,7 @@ public class Room {
     }
     /**
      *Given a Scanner object at the beginning of a Room file entry from 
-     *a .sav file, reads and returns a Room object that represents it.
+     *a .sav file, it reads and returns a Room object that represents it.
      *@param s
      *@param d
      *@throws GameState.IllegalSaveFormatException
@@ -166,7 +171,7 @@ public class Room {
         return description;
     }
     /**
-     * Takes a single character, representing a direction which 
+     * Takes a single character, representing a direction in which 
      * to exit a Room object. If the exit direction is present,
      * the exit destination Room object is returned, otherwise the
      * return value is set to null.
