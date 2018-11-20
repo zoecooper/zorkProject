@@ -34,6 +34,10 @@ public class GameState {
     private ArrayList<Item> inventory;
     private Room adventurersCurrentRoom;
 
+    /**
+     * Singleton creating an instance of itself and returing that instance to be called on anywhere
+     * throughout the different classes.
+     */ 
     static synchronized GameState instance() {
         if (theInstance == null) {
             theInstance = new GameState();
@@ -54,6 +58,9 @@ public class GameState {
     }
 	    
 
+    /** 
+     * Constructor instantiating the inventory ArrayList for an <tt>Item<tt>.
+     */ 
     private GameState() {
         inventory = new ArrayList<Item>();
     }
@@ -69,10 +76,14 @@ public class GameState {
         return total;
     }
     /**
-     *Reads lines in the save file allowing the player to revive the previously 
-     saved state in the game so that the player may return to where he/she last saved.
+     *Reads lines in the save file allowing the player to revive the  previously 
+     saved state in the game so that the player may return to where he/she last saved
+     as long as the save file is compatible. Restore calls many other restore methods to read 
+     corresponding parts of the file.
      * @param filename name of save file the user is playing the game with.
      * @throws FileNotFoundException
+     * @throws IllegalDungeonFormatException
+     * @throws IllegalSaveFormatException
      */ 
     void restore(String filename) throws FileNotFoundException,
         IllegalSaveFormatException, Dungeon.IllegalDungeonFormatException {
@@ -113,8 +124,10 @@ public class GameState {
             }
         }
     }
-    /** Saves the player's current state in the game to a save file so that the player may return back to the game in the same state saved.
+    /** Saves the player's current state in the game to a save file so that the player 
+     * may return back to the game in the same state saved.
      * @param saveName the filename the the current state of game is saved to
+     * @throws IOException
      */ 
     void store(String saveName) throws IOException {
         String filename = saveName + SAVE_FILE_EXTENSION;
@@ -154,7 +167,7 @@ public class GameState {
  
     /**
      * Adds an item to the player's inventory.
-     * @param item the item that will be added to the inventory
+     * @param item -the item that will be added to the inventory
      */ 
     void addToInventory(Item item) /* throws TooHeavyException */ {
         inventory.add(item);
@@ -224,7 +237,7 @@ public class GameState {
     }
 
     /**
-     * Returns the player's current dungeon.
+     * Returns the current dungeon.
      */
     Dungeon getDungeon() {
         return dungeon;
