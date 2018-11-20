@@ -6,8 +6,8 @@
 
 class ConsumeCommand extends Command {
 	/**
-	 * Executes the command for the player to eat the item, making the player's
-	 * health increase by the amount of points assigned to the food item.
+	 * Executes the command for the player to eat the item, also allowing the player's
+	 * health to increase by the amount of points assigned to that specific food item.
 	 */ 
 	public String execute(){
 

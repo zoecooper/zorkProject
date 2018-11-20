@@ -43,7 +43,7 @@ public class GameState {
     /**
      * Returns the player's current health.
      */ 
-    getHealth() {
+   int getHealth() {
 	    return health;
     }
     /**

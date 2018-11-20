@@ -8,8 +8,8 @@ class SaveCommand extends Command {
     private String saveFilename;
 
     /**
-     * Constructor for the save file that if the user does not specifically enter a 
-     * name for the save file, the game will be saved to a default save file
+     * Constructor for the save file ruling that if the user does not specifically enter a 
+     * name for the save file, the game will be saved to a default save file.
      */ 
 
     SaveCommand(String saveFilename) {
@@ -21,7 +21,8 @@ class SaveCommand extends Command {
     }
 
     /**
-     * Executes the command so the player may save current progress to a save file.
+     * Executes the command so the player may save current progress to a save file using 
+     * the store method in GameState. If the game fails to save, it will return "Couldn't save!"
      */ 
     public String execute() {
         try {

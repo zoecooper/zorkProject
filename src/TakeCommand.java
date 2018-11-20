@@ -6,12 +6,16 @@ class TakeCommand extends Command {
 
     private String itemName;
 
+   
+    /**
+     * A contructor setting the item name of the item wanting to be taken.
+     */ 
     TakeCommand(String itemName) {
         this.itemName = itemName;
     }
 
     /**
-     * Executes the take command for an item allowing the user type "take" plus the item 
+     * Executes the take command for an item allowing the user to "take" the item 
      * wanting to be taken if it is in the player's current room, then adding the item 
      * to the player's inventory and removing it from the room's contents. If the user 
      * simply enters "Take," the method will return "Take what?" The item cannot be 
