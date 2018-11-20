@@ -6,7 +6,9 @@
 public class VerboseCommand extends Command {
 	public VerboseCommand(){
 	}
-	
+        /**
+	 * Executes the command 
+	 */ 	
 	public String execute(){
 		return "Aneesa";
 	}
