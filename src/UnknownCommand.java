@@ -11,7 +11,7 @@ class UnknownCommand extends Command {
     }
 
     /**
-     * Returns the string for the unknown command.
+     * Executes the command to return the string for the unknown command.
      */ 
     String execute() {
         return "I'm not sure what you mean by \"" + bogusCommand + "\".\n";

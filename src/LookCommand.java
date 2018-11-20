@@ -1,12 +1,12 @@
 
 class LookCommand extends Command {
 
-    /** Returns the full description of the current room after the user types "Look".
+    /** Allows the player to see the full description of the current room after the initial showing.
      */
     LookCommand() {
     }
 
-    /** Executes the command to return the description.
+    /** Executes the command to return the description upon the user typng the command.
      */ 
     public String execute() {
         Room currRoom = GameState.instance().getAdventurersCurrentRoom();

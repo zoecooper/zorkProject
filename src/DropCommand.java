@@ -12,9 +12,9 @@ class DropCommand extends Command {
         this.itemName = itemName;
     }
     /**
-     * After finding out that target item name variable in not empty 
+     * After finding out that target item name variable is not empty 
      * and exists in the players inventory, the corresponding item 
-     * objects are removed from inventory and added to contents of 
+     * objects are removed from inventory and added back to contents of 
      * the players current room. 
      * @return a message describing the action taken by the olayer,
      * if there is any. 

@@ -8,8 +8,8 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 
 /**
- * <tt>GameState<tt> delivers a way for the user to save its current progress in th
- *  game and restore the user to its last saved progress.
+ * <tt>GameState<tt> delivers a way for the user to save its current progress in the
+ *  game and restore the player to the last saved progress.
  *  @author NC 
  */
 
@@ -43,7 +43,9 @@ public class GameState {
     private GameState() {
         inventory = new ArrayList<Item>();
     }
-    /** Returns the players current weight of his/her inventory.
+    /** 
+     * Adds up the weight of each item in the player's inventory and returns the
+     * total weight of the inventory.
      */ 
     int getAdventurersCurrentWeight() {
         int total = 0;
@@ -53,9 +55,9 @@ public class GameState {
         return total;
     }
     /**
-     * Brings the player back to his/her previously saved state in the game with the 
-     * saved inventory, current room, etc.
-     * @param filename name of file the user is playing the game with.
+     *Reads lines in the save file allowing the player to revive the previously 
+     saved state in the game so that the player may return to where he/she last saved.
+     * @param filename name of save file the user is playing the game with.
      * @throws FileNotFoundException
      */ 
     void restore(String filename) throws FileNotFoundException,
@@ -97,8 +99,7 @@ public class GameState {
             }
         }
     }
-    /** Saves the player's current state in the game to a default save file. The user can then enter
-     * the default save file and play the game from he/she last saved.
+    /** Saves the player's current state in the game to a save file so that the player may return back to the game in the same state saved.
      * @param saveName the filename the the current state of game is saved to
      */ 
     void store(String saveName) throws IOException {
@@ -118,7 +119,8 @@ public class GameState {
         w.close();
     }
 
-    /**Sets the players current room to the entry of the players dungeon.
+    /**
+     * Sets the players current room to the entry of the players dungeon.
      * @param dungeon
      */ 
     void initialize(Dungeon dungeon) {
@@ -126,7 +128,7 @@ public class GameState {
         adventurersCurrentRoom = dungeon.getEntry();
     }
     /**
-     * Returns the names of the items in the player's inventory.
+     * Returns all names of the items listed in the player's inventory.
      */ 
     ArrayList<String> getInventoryNames() {
         ArrayList<String> names = new ArrayList<String>();
@@ -137,7 +139,7 @@ public class GameState {
     }
  
     /**
-     * Adds an item to its inventory.
+     * Adds an item to the player's inventory.
      * @param item the item that will be added to the inventory
      */ 
     void addToInventory(Item item) /* throws TooHeavyException */ {
@@ -145,14 +147,15 @@ public class GameState {
     }
 
     /**
-     * Removes an item from its inventory.
+     * Removes an item from the player's inventory.
      * @param item the item that will be added to the inventory
      */
     void removeFromInventory(Item item) {
         inventory.remove(item);
     }
 
-    /** Returns the primary name of an item in the current room the player is in.
+    /** 
+     * Returns the primary name of a given item in the current room the player is in if the name or alias of the item aligns wiith the primary name.
      * @param name of the item
      * @throws NoItemException
      */  
@@ -175,7 +178,8 @@ public class GameState {
         throw new Item.NoItemException();
     }
 
-    /** Returns the primary name of an item in the player's inventory.
+    /** 
+     * Returns the primary name of a given item in the player's inventory if the given name aligns with the primary name.
      * @param name of the item
      * @throws NoItemException
      */
@@ -190,20 +194,23 @@ public class GameState {
     }
 
 
-    /**Returns the player's current room.
+    /**
+     * Returns the player's current room.
      */ 
     Room getAdventurersCurrentRoom() {
         return adventurersCurrentRoom;
     }
 
-    /**Sets the current room of the player.
+    /**
+     * Sets the current room of the player.
      * @param room
      */
     void setAdventurersCurrentRoom(Room room) {
         adventurersCurrentRoom = room;
     }
 
-    /**Returns the player's current dungeon.
+    /**
+     * Returns the player's current dungeon.
      */
     Dungeon getDungeon() {
         return dungeon;
