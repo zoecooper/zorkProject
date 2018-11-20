@@ -11,12 +11,6 @@ class ScoreCommand extends Command{
 	ScoreCommand(int score) {
 		this.score = score;
 	}
-	/**
-	 * Return's the player's current score.
-	 */ 
-	int getScore(){
-		return score;
-	}
 
 	/**
 	 * Executes the command to return the player's current score along with a specific string

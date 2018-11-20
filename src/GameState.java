@@ -29,6 +29,7 @@ public class GameState {
     static String INVENTORY_LEADER = "Inventory: ";
 
     private int health;
+    private int score;
     private static GameState theInstance;
     private Dungeon dungeon;
     private ArrayList<Item> inventory;
@@ -53,13 +54,25 @@ public class GameState {
     /**
      * Adds the points necessary to increase the player's current health.
      */ 
-    void addHealth(){
+    void addToHealth(){
 	    health = health;
+    }
+     /**
+      * Return's the player's current score.
+      */
+    int getScore(){
+	    return score;
+    }
+    /**
+     * Adds the points necessary to increase the player's current score.
+     */
+    void addToScore(){
+            score = score;
     }
 	    
 
     /** 
-     * Constructor instantiating the inventory ArrayList for an <tt>Item<tt>.
+     * Constructor instantiating the inventory ArrayList for <tt>Item<tt>'s.
      */ 
     private GameState() {
         inventory = new ArrayList<Item>();
