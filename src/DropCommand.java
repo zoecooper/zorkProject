@@ -16,7 +16,7 @@ class DropCommand extends Command {
     /**
      * After finding out that the itemName variable in not empty 
      * and it exists in the players inventory, the corresponding item 
-     * objects are removed from inventory and added to contents of 
+     * objects are removed from inventory and added to contents of
      * the players current room. 
      * @return a message describing the action taken by the player,
      * if there is any. 

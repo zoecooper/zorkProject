@@ -1,12 +1,16 @@
-
+/**
+ * Allows the player to save his/her current progress in the game.
+ * @author NC
+ */
 class SaveCommand extends Command {
-
-    /**
-     * Allows the player to save his/her progress  by typing "save".
-     */
     private static String DEFAULT_SAVE_FILENAME = "zork";
 
     private String saveFilename;
+
+    /**
+     * Constructor for the save file that if the user does not specifically enter a 
+     * name for the save file, the game will be saved to a default save file
+     */ 
 
     SaveCommand(String saveFilename) {
         if (saveFilename == null || saveFilename.length() == 0) {
@@ -17,7 +21,7 @@ class SaveCommand extends Command {
     }
 
     /**
-     * Executes the command so the player may save progress.
+     * Executes the command so the player may save current progress to a save file.
      */ 
     public String execute() {
         try {

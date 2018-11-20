@@ -1,9 +1,10 @@
+/**
+ * Allows the player to be able to view his/her score in the game.
+ * @author NC
+ */
 class ScoreCommand extends Command{
-	/**Allows the player to be able to view his/her score in the game upon typing the command "score".
-	 * @author NC
-	 */
-
-	/**Executes the command for the player to see score.
+	/**
+	 * Executes the command to return the player's current score.
 	 */
        public String execute(){
        return "Nadiya";

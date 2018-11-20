@@ -1,6 +1,7 @@
 /**
-     * Allows user to add an item to its inventory typing the command "take".
-     */
+ * Allows user to add an item to its inventory.
+ * @author NC
+ */
 class TakeCommand extends Command {
 
     private String itemName;
@@ -10,7 +11,11 @@ class TakeCommand extends Command {
     }
 
     /**
-     * Executes the take command for the item.
+     * Executes the take command for an item allowing the user type "take" plus the item 
+     * wanting to be taken if it is in the player's current room, then adding the item 
+     * to the player's inventory and removing it from the room's contents. If the user 
+     * simply enters "Take," the method will return "Take what?" The item cannot be 
+     * taken twice nor taken if the inventory is more than/will be more than the max weight.
      */ 
     public String execute() {
         if (itemName == null || itemName.trim().length() == 0) {

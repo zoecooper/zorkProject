@@ -1,9 +1,8 @@
-
-class MovementCommand extends Command {
-
-
-    /**Allows player to move in the direction desired by typing the direction commands "w","e","n","s","u", or "d".
-     */ 
+/**
+ * Allows player to move in the direction desired to enter a room or exit.
+ * @author NC
+ */
+class MovementCommand extends Command { 
     private String dir;    
 
     MovementCommand(String dir) {
@@ -12,7 +11,11 @@ class MovementCommand extends Command {
 
 
 	
-    /**Execute the command for the player to move through the game with directions.
+    /**
+     * Executes the command for the player to move through the different rooms within 
+     * the dungeon according to directions the player enters and returns the 
+     * descriptions for the room the player is currently in if the player 
+     * has never been to that specific room.
      */ 
     
     public String execute() {
