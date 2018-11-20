@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 /**
  * It runs commands to check the inventory
@@ -11,10 +10,9 @@ class InventoryCommand extends Command {
     InventoryCommand() {
     }
     /**
-     * Checks to see if you are carrying anything if you are,
-     * it will tell you what the items are. 
-     * @return a message telling you what items you have if any, 
-     * if you dont have nay it will tell you that.
+     * Contents are printed to the console if inventory
+     * is not empty.   
+     * @return a message telling you if you have any items.
      */ 
     public String execute() {
         ArrayList<String> names = GameState.instance().getInventoryNames();

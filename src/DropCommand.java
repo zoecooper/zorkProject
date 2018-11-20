@@ -1,4 +1,6 @@
 /**
+ * This class is an extension of the command class 
+ * and it drops items from your inventory. 
  * @author AN
  */ 
 class DropCommand extends Command {
@@ -12,11 +14,11 @@ class DropCommand extends Command {
         this.itemName = itemName;
     }
     /**
-     * After finding out that target item name variable in not empty 
-     * and exists in the players inventory, the corresponding item 
+     * After finding out that the itemName variable in not empty 
+     * and it exists in the players inventory, the corresponding item 
      * objects are removed from inventory and added to contents of 
      * the players current room. 
-     * @return a message describing the action taken by the olayer,
+     * @return a message describing the action taken by the player,
      * if there is any. 
      */ 
     public String execute() {
