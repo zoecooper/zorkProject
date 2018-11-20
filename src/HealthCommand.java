@@ -4,7 +4,8 @@
  */
 class HealthCommand extends Command {
         /**
-	 * Executes the command to return a string describing the player's current health.
+	 * Executes the command to return a string describing the player's health 
+	 * according to the number in health the player currently has.
          */
        public String execute(){
        return "Nadiya";

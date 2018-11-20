@@ -28,6 +28,7 @@ public class GameState {
     static String CURRENT_ROOM_LEADER = "Current room: ";
     static String INVENTORY_LEADER = "Inventory: ";
 
+    private int health;
     private static GameState theInstance;
     private Dungeon dungeon;
     private ArrayList<Item> inventory;
@@ -39,6 +40,19 @@ public class GameState {
         }
         return theInstance;
     }
+    /**
+     * Returns the player's current health.
+     */ 
+    getHealth() {
+	    return health;
+    }
+    /**
+     * Adds the points necessary to increase the player's current health.
+     */ 
+    void addHealth(){
+	    health = health;
+    }
+	    
 
     private GameState() {
         inventory = new ArrayList<Item>();
@@ -120,7 +134,7 @@ public class GameState {
     }
 
     /**
-     * Sets the players current room to the entry of the players dungeon.
+     * Sets the players current room to the entry of the dungeon being currently played.
      * @param dungeon
      */ 
     void initialize(Dungeon dungeon) {
@@ -215,5 +229,6 @@ public class GameState {
     Dungeon getDungeon() {
         return dungeon;
     }
+
 
 }
