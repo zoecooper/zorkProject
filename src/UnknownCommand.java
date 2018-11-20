@@ -1,5 +1,5 @@
 /**
- * Returns a string if the player's command does not match any of the other commands written.
+ * This command is called if the player's command does not match any of the other commands written.
  * @author NC
  */
 class UnknownCommand extends Command {

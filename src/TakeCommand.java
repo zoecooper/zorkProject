@@ -4,9 +4,7 @@
  */
 class TakeCommand extends Command {
 
-    private String itemName;
-
-   
+    private String itemName;   
     /**
      * A contructor setting the item name of the item wanting to be taken.
      */ 
@@ -19,7 +17,8 @@ class TakeCommand extends Command {
      * wanting to be taken if it is in the player's current room, then adding the item 
      * to the player's inventory and removing it from the room's contents. If the user 
      * simply enters "Take," the method will return "Take what?" The item cannot be 
-     * taken twice nor taken if the inventory is more than/will be more than the max weight.
+     * taken twice, taken from a different room, nor taken if the inventory is more 
+     * than/will be more than the max weight.
      */ 
     public String execute() {
         if (itemName == null || itemName.trim().length() == 0) {
