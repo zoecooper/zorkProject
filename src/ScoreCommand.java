@@ -3,13 +3,7 @@
  * @author NC
  */
 class ScoreCommand extends Command{
-	private int score;
-
-	/**
-	 * Constructor setting the player's score.
-	 */ 
-	ScoreCommand(int score) {
-		this.score = score;
+	ScoreCommand(){
 	}
 
 	/**
@@ -17,7 +11,26 @@ class ScoreCommand extends Command{
 	 * to correlate with the specific score.
 	 */
        public String execute(){
-       return "Nadiya";
+	       int score = GameState.instance().getScore();
+	       String rank;
+	       if(score<=24){
+		       rank = "Loser";
+	       }
+	       else if(score<=49){
+		       rank = "Beginning Player";
+	       }
+	       else if(score<=74){
+		       rank = "Intermediate Player";
+	       }
+	       else if(score<=99){
+		       rank = "Advanced Player";
+	       }
+	       else{
+	
+		     rank = "Expert";
+	       }
+	       return "You have accumulated " + score + "points. This gives you a rank of " + rank;
+       
        }	
 
 
