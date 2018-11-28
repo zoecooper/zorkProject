@@ -83,12 +83,31 @@ public class Item {
     String getPrimaryName() { return primaryName; }
     
    /**
-    * Gets the message of the command.
+    * Gets the message of the command and checks for other effects now that the file contains chars like [].
     * @param verb string that is the command the user wants to use on the item
     * @return a string of the message
+    * @throw exception if no item exists
     */
-    public String getMessageForVerb(String verb) {
-        return messages.get(verb);
+    public String getMessageForVerb(String verb) throws NoItemException {
+        String message= "";
+	for(String key: messages.keySet()){
+            if(key.contains(verb)){
+                message = messages.get(key);
+
+                //if there's other effects, we need to execute them
+                if(key.contains("[")){
+                    secondaryCommands(key);
+                }
+
+            }
+
+
+        }
+
+
+
+
+        return message;
     }
 
    /**
