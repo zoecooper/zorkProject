@@ -1,5 +1,5 @@
 /**
- * Controls tasks that only characters can do.
+ * Controls tasks that the player can do to characters only. .
  * @author ZC
  */
 class CharacterSpecificCommand extends Command {
@@ -14,8 +14,8 @@ class CharacterSpecificCommand extends Command {
     }
 
    /**
-    *Executes the command for the character.
-    *@return a string saying the desired character does not exist in the room if it does not or a string saying the user cannot do something to the character given if they did not provide the correct command for that specific character
+    *Executes the command for the character and tells the user the desired character does not exist in the room if they are not found. If it does exist, it will return a string saying the user cannot do something to the character given if they did not provide the correct command for that specific character. 
+    *@return a string with the error messages for the user
     *@throws NoCharacterException if the character given is not the in room the adventurer is currently in
     */
     public String execute() {
