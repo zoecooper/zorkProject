@@ -96,7 +96,7 @@ public class Item {
 
                 //if there's other effects, we need to execute them
                 if(key.contains("[")){
-                    secondaryCommands(key);
+                    //FIX THIS LINE secondaryCommands(key);
                 }
 
             }
@@ -111,18 +111,20 @@ public class Item {
     }
 
    /**
+     * Moves the item from its current room to a different room in the dungeon.
+     */
+    public void teleportItem() {
+	    Item newItem = null;
+
+    }
+    
+
+   /**
     * Gives the name of the item in a string.
     * @return a string of the item's name
     */
     public String toString() {
         return primaryName;
     }
-    /**
-     * Moves the player from its current room to a different room in the dungeon. 
-     * There is a set room that the player would always teleport to during this event.
-     */ 
-    public void teleport() {
-	    Item newItem = null;
-	   
-    }
+   
 }

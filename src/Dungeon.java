@@ -224,7 +224,7 @@ public class Dungeon {
     }
 
      /**
-     * Calls the disapperItem method, because once an item is transformed, the transformation cannot be reversed. Once that is done, it will return a new time to take the place of the previous item.
+     * Calls the disappearItem method, because once an item is transformed, the transformation cannot be reversed. Once that is done, it will return a new item to take the place of the previous item.
      * @param primaryItemName the name of the item being transformed
      * @throws Item.NoItemException exception thrown if the item is not in the dungeon
      * @return newItem that is the new and transformed version of the item
@@ -240,7 +240,7 @@ public class Dungeon {
      * Removes items from the dungeon permanently. Primarily ensures the item is in the vicinity or inventory so it doesn't affect items in another rooms. Then further ensures it removes them from either the inventory or the room/dungeon.
      *
      * @param primaryItemName the name of the item to be removed from the dungeon
-     * @throws Item.NoItemException exception thrown if the item is not in the dungeon
+     * @throws Item.NoItemException if the item is not in the dungeon
      */
     public void disappearItem(String primaryItemName) throws Item.NoItemException {
         items.remove(GameState.instance().getItemInVicinityNamed(primaryItemName));
