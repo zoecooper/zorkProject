@@ -14,9 +14,11 @@ class ItemSpecificCommand extends Command {
     }
 
    /**
-    *Executes the command for the item returning the message assigned to the verb for that specific item.
-    *@return a string saying the desired item does not exist in the room if it does not or a string saying the user cannot do something to the item given if they did not provide the correct command for that specific item
-    *@throws NoItemException if the item given is not the in room the adventurer is currently inC
+    *Executes the command for the item and tells the user the desired item does not exist in the room if
+it is not found. If it does exist, it will return a string saying the user cannot do something to the item
+given if they did not provide the correct command for that specific item.
+    *@return a string with the error messages for the user
+    *@throws NoItemException if the item given is not the in room the adventurer is currently in
     */
     public String execute() {
         
