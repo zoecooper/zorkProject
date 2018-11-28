@@ -60,9 +60,9 @@ public class Item {
     }
 
    /**
-    * Compares the primary name with alias name.
+    * Checks whether the argument matches either the Item's primary name or one of its aliases.
     * @param name string of the item
-    * @return a true if the primary name/alias name equals the name or a false if neither of those work
+    * @return true if the primary name/alias name equals the name or false if neither of those work
     */ 
     boolean goesBy(String name) {
         if (this.primaryName.equals(name)) {

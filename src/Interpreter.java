@@ -14,7 +14,7 @@ public class Interpreter {
         "Usage: Interpreter zorkFile.zork|saveFile.sav.";
 
     /**
-    * Prints a usage message if there are no arguments given and checks if they want to play a new game or play from a saved game.
+    * Accepts a command-line argument which (depending on what the user wants to do) is either the name of a dungeon file or the name of a save file. Checks to see whether the user typed a .zork or a .sav extension. Prints a usage message if there are no arguments given.
     * @param args[] string that is the number of arguments the user types in when they wish to play
     */
     public static void main(String args[]) {
