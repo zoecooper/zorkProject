@@ -12,6 +12,19 @@ public class DieEvent extends Event {
         
 	public DieEvent() {
 	}
+	
+	public String execute() {
+		GameState instance = GameState.instance();
+		try {
+			instance.restore(instance.DEFAULT_SAVE_FILE + instance.SAVE_FILE_EXTENSION);
 
-		
+		}catch
+			(IOException | GameState.IllegalSaveFormatException | Dungeon.IllegalDungeonFormatException e) {}
+			System.out.println("You have died :( and are back at your last save point!");
+			System.out.println(instance.getAdventurersCurrentRoom().getTitle());
+			
+			return "";
+		}
 
+ 
+}
