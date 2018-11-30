@@ -49,7 +49,7 @@ public class Character {
      * @return the character's health
      */
     int getHealth() {
-        return health;
+       //ZOE MYBE CHANGE TO WEIGHT return health;
     }
 
    /**
