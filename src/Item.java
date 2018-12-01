@@ -46,7 +46,7 @@ public class Item {
             }
             String[] verbParts = verbLine.split(":");
             messages.put(verbParts[0],verbParts[1]);
-            
+            System.out.println(verbParts[0]); 
             verbLine = s.nextLine();
         }
     }
