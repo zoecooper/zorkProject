@@ -23,7 +23,7 @@ public class DieEvent extends Event {
 			System.out.println("You have died :( and are back at your last save point!");
 			System.out.println(instance.getAdventurersCurrentRoom().getTitle());
 			
-			return "";
+			return "You have died.... dont give up!";
 		}
 
  
