@@ -22,7 +22,7 @@ public class GameState {
     }
     static String DEFAULT_SAVE_FILE = "zork_sav"; 	
     static String SAVE_FILE_EXTENSION = ".sav";
-    static String SAVE_FILE_VERSION = "Zork III save data";
+    static String SAVE_FILE_VERSION = "Zork++ save data";
 
     static String ADVENTURER_MARKER = "Adventurer:";
     static String CURRENT_ROOM_LEADER = "Current room: ";
@@ -52,10 +52,10 @@ public class GameState {
 	    return health;
     }
     /**
-     * Adds the points necessary to increase the player's current health.
+     * Subtracts the points necessary to increase the player's current health.
      */ 
-    void addToHealth(){
-	    health = health;
+    void subtractHealth(int n){
+	    this.health -= n;
     }
      /**
       * Return's the player's current score.
@@ -66,8 +66,8 @@ public class GameState {
     /**
      * Adds the points necessary to increase the player's current score.
      */
-    void addToScore(){
-            score = score;
+    void addToScore(int j){
+           this.score += j;
     }
 	    
 
