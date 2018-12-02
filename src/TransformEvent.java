@@ -13,7 +13,7 @@ class TransformEvent extends Event {
                 //disappears it
                 GameState.instance().getDungeon().disappearItem(String.valueOf(theItem));
                 //new item
-                Item newItem = GameState.instance().getDungeon().getItem(command.substring(command.indexOf("(")+1, command.indexOf(")")));
+                Item newItem = GameState.instance().getDungeon().getItem(n.substring(n.indexOf("(")+1, n.indexOf(")")));
 
 
                 GameState.instance().addToInventory(newItem);
