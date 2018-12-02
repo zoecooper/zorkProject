@@ -6,16 +6,14 @@ class DisappearEvent extends Event {
 		this.itemName  = itemName;
 	}
 
-	String execute() {
-	Item theItem  = GameState.instance().getItemFromInventoryNamed(itemName);
-	GameState.instance().removeFromInventory(theItem);
-	return "";
+	String execute(){
 
-
-        try {
+	try{
+		Item theItem  = GameState.instance().getItemFromInventoryNamed(itemName);
+		GameState.instance().removeFromInventory(theItem);
 	       	GameState.instance().getDungeon().disappearItem(this.itemName);
-       	} catch (NoItemException e) {
-	       	e.printStackTrace();
+       	} catch (Exception e) {       	
        	}
+	return "";
 	}
 }
