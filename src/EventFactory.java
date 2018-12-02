@@ -25,7 +25,8 @@ public class EventFactory {
                 for(String o : n){
                         if(o.toLowerCase().contains("wound")){
                                 int l = o.indexOf("(");
-                                int parse = Integer.parseInt(o.substring(l,o.length()-1));
+                                int parse = Integer.parseInt(o.substring(l+1,o.length()-1));
+
                                 return new WoundEvent(parse);
                         }
                         if(o.toLowerCase().contains("die")){
@@ -34,13 +35,14 @@ public class EventFactory {
 			if(o.toLowerCase().contains("score")){
                                 int l = o.indexOf("(");
                                 int parse = Integer.parseInt(o.substring(l,o.length()-1));
+				System.out.print(parse);
                                 return new WoundEvent(parse);
                         }
 			if(o.toLowerCase().contains("teleport")){
 				return new TeleportEvent();
 			}
 			if(o.toLowerCase().contains("transform")){
-				return new TransformEvent();
+				return new TransformEvent(item);
 			}
 			if(o.toLowerCase().contains("win")){
 				return new WinEvent();
