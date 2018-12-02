@@ -16,6 +16,7 @@ public class Item {
     private int weight;
     private Hashtable<String,String> messages;
     private Set<String> aliases;
+    private Hashtable<String,String> event;
 
 
     Item(Scanner s) throws NoItemException,
@@ -23,7 +24,7 @@ public class Item {
 
         messages = new Hashtable<String,String>();
         aliases = new HashSet<String>();
-
+	event = new Hashtable<String,String>();
         // Read item name.
         String names[] = s.nextLine().split(",");
         if (names[0].equals(Dungeon.TOP_LEVEL_DELIM)) {
@@ -46,7 +47,12 @@ public class Item {
             }
             String[] verbParts = verbLine.split(":");
             messages.put(verbParts[0],verbParts[1]);
-            System.out.println(verbParts[0]); 
+	    if(verbParts[0].contains("[")){
+		    int n = verbParts[0].indexOf("[");
+		    event.put(verbParts[0].substring(0,n),verbParts[0].substring(n));
+		    System.out.println(verbParts[0].substring(n));
+	    }
+     
             verbLine = s.nextLine();
         }
     }
@@ -109,6 +115,11 @@ public class Item {
 
         return message;
     }
+    String getEvent(String verb){
+	    return event.get(verb);
+    }
+	    
+
 
    /**
      * Moves the item from its current room to a different room in the dungeon.
