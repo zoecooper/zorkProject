@@ -6,5 +6,6 @@ class TeleportEvent extends Event {
 	String execute() {
 		GameState.instance().setAdventurersCurrentRoom(GameState.instance().getDungeon().getEntry());
                 System.out.println(GameState.instance().getDungeon().getEntry().describe());
+		return "";
 	}
 }
