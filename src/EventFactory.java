@@ -20,7 +20,7 @@ public class EventFactory {
 
         private EventFactory() {
         }
-        public Event parse(String event){
+        public Event parse(String event, String item){
                 String[] n = event.split(",");
                 for(String o : n){
                         if(o.toLowerCase().contains("wound")){
@@ -36,6 +36,20 @@ public class EventFactory {
                                 int parse = Integer.parseInt(o.substring(l,o.length()-1));
                                 return new WoundEvent(parse);
                         }
+			if(o.toLowerCase().contains("teleport")){
+				return new TeleportEvent();
+			}
+			if(o.toLowerCase().contains("transform")){
+				return new TransformEvent();
+			}
+			if(o.toLowerCase().contains("win")){
+				return new WinEvent();
+			}
+			if(o.toLowerCase().contains("drop")){
+				return new DropEvent(item);
+			}
+
+
                 }
                 return null;
         }
