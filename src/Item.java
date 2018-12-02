@@ -102,7 +102,7 @@ public class Item {
 
                 //if there's other effects, we need to execute them
                 if(key.contains("[")){
-                    commands(key);
+                    parse(key);
                 }
 
             }
