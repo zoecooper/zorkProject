@@ -119,15 +119,6 @@ public class Item {
 	    return event.get(verb);
     }
 	    
-
-
-   /**
-     * Moves the item from its current room to a different room in the dungeon.
-     */
-    public void teleportItem() {
-	    Item newItem = null;
-
-    }
     
 
    /**

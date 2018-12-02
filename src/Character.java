@@ -45,8 +45,8 @@ public class Character {
     }
 
     /**
-     * Gets the health of a character in a room.
-     * @return the character's health
+     * Gets the weight of a character in a room.
+     * @return the character's weight
      */
     int getWeight() {
        return weight;
