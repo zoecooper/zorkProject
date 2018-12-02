@@ -30,7 +30,7 @@ given if they did not provide the correct command for that specific item.
         }
 	String event = itemReferredTo.getEvent(verb);
 	if(event!= null){
-		Event n = EventFactory.instance().parse(event, itemReferredTo);
+		Event n = EventFactory.instance().parse(event, noun);
 		n.execute();
 	}
         try {
