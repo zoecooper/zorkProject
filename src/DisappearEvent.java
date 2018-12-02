@@ -7,6 +7,7 @@ class DisappearEvent extends Event {
 	}
 
 	String execute() {
-	 GameState.instance().removeFromInventory(this);
+	Item theItem = GameState.instance().getItemFromInventoryNamed(Item);
+	GameState.instance().removeFromInventory(theItem);
 	}
 }
