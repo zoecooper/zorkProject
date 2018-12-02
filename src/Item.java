@@ -95,26 +95,9 @@ public class Item {
     * @throw exception if no item exists
     */
     public String getMessageForVerb(String verb) throws NoItemException {
-        String message= "";
-	for(String key: messages.keySet()){
-            if(key.contains(verb)){
-                message = messages.get(key);
-
-                //if there's other effects, we need to execute them
-                if(key.contains("[")){
-                    parse(key);
-                }
-
-            }
-
-
-        }
-
-
-
-
-        return message;
+	    String message = "";
     }
+
     String getEvent(String verb){
 	    return event.get(verb);
     }
