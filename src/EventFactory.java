@@ -1,5 +1,12 @@
 import java.util.List;
 import java.util.Arrays;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 
 public class EventFactory {
 	private static EventFactory theInstance;
@@ -64,4 +71,5 @@ public class EventFactory {
                 System.out.println(GameState.instance().getDungeon().getEntry().describe());
             }
         }
+	}
 }
