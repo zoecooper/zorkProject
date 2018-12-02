@@ -13,7 +13,7 @@ public class Character {
     static class NoCharacterException extends Exception {}
 
     private String primaryName;
-    private int health;
+    private int weight;
     private Hashtable<String,String> messages;
     
 
@@ -48,8 +48,8 @@ public class Character {
      * Gets the health of a character in a room.
      * @return the character's health
      */
-    int getHealth() {
-       //ZOE MYBE CHANGE TO WEIGHT return health;
+    int getWeight() {
+       return weight;
     }
 
    /**
@@ -57,29 +57,6 @@ public class Character {
     * @return a string that holds the name of the character
     */
     String getPrimaryName() { return primaryName; }
-
-
-    /**
-    * Gets the message of the command and checks for other effects now that the file contains chars like [].
-    * @param verb string that is the command the user wants to use on the character
-    * @return a string of the message
-    * @throws NoCharacterException if the character is not found
-    */
-    public String getMessageForVerb(String verb) throws NoCharacterException {
-        String message= "";
-        for(String key: messages.keySet()){
-            if(key.contains(verb)){
-                message = messages.get(key);
-                if(key.contains("[")){
-                    //ZOE FIX THIS LINE secondaryCommands(key);
-                }
-
-            }
-
-
-        }
-        return message;
-    }
 
    /**
     * Gives the name of the character in a string.
