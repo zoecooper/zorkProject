@@ -31,6 +31,11 @@ public class EventFactory {
                         if(o.toLowerCase().contains("die")){
                                 return new DieEvent();
                         }
+			if(o.toLowerCase().contains("score")){
+                                int l = o.indexOf("(");
+                                int parse = Integer.parseInt(o.substring(l,o.length()-1));
+                                return new WoundEvent(parse);
+                        }
                 }
                 return null;
         }
