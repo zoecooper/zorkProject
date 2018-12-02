@@ -1,13 +1,13 @@
 class DisappearEvent extends Event {
 
-	private String primaryItemName;
+	private String itemName;
 
-	public DisappearEvent(String primaryItemName){
-		this.primaryItemName  = primaryItemName;
+	public DisappearEvent(String itemName){
+		this.itemName  = itemName;
 	}
 
 	String execute() {
-	Item theItem = GameState.instance().getItemFromInventoryNamed(Item);
+	Item theItem  = GameState.instance().getItemFromInventoryNamed(itemName);
 	GameState.instance().removeFromInventory(theItem);
 	}
 }
