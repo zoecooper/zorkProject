@@ -29,10 +29,6 @@ given if they did not provide the correct command for that specific item.
             return "There's no " + noun + " here.";
         }
 	String event = itemReferredTo.getEvent(verb);
-	if(event!= null){
-		Event n = EventFactory.instance().parse(event, noun);
-		n.execute();
-	}
         try {
 		String msg = itemReferredTo.getMessageForVerb(verb);
         
@@ -40,6 +36,10 @@ given if they did not provide the correct command for that specific item.
 				"Sorry, you can't " + verb + " the " + noun + "." : msg) + "\n";
 	}catch(Exception e) {
 	}
+	if(event!= null){
+                Event n = EventFactory.instance().parse(event, noun);
+                n.execute();
+        }
 	return "";
     }
 }
