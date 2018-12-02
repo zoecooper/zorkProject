@@ -96,6 +96,7 @@ public class Item {
     */
     public String getMessageForVerb(String verb) throws NoItemException {
 	    String message = "";
+    return message;
     }
 
     String getEvent(String verb){
