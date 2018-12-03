@@ -28,7 +28,7 @@ public class GameState {
     static String CURRENT_ROOM_LEADER = "Current room: ";
     static String INVENTORY_LEADER = "Inventory: ";
 
-    private int health;
+    private int health = 100;
     private int score;
     private static GameState theInstance;
     private Dungeon dungeon;

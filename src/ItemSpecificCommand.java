@@ -30,8 +30,15 @@ given if they did not provide the correct command for that specific item.
         }
 	//String event = itemReferredTo.getEvent(verb);
         try {
+
+	String event = itemReferredTo.getEvent(verb);
+        String mak =""; 
+	if(event!= null){
+                Event n = EventFactory.instance().parse(event, noun);
+                mak = n.execute();
+        }
 		String msg = itemReferredTo.getMessageForVerb(verb);
-		return  msg;
+		return  msg + "\n" + mak;
         
 		//return (msg == null ? 
 		//		"Sorry, you can't " + verb + " the " + noun + "." : msg) + "\n";

@@ -62,6 +62,10 @@ public class Item {
      * Gets the weight of an item in a room.
      * @return the item's weight
      */
+	public Item(String name){
+		this.primaryName = name;  
+	}
+
     int getWeight() {
         return weight;
     }

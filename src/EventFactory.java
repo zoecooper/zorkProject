@@ -43,7 +43,9 @@ public class EventFactory {
 				return new TeleportEvent();
 			}
 			if(o.toLowerCase().contains("transform")){
-				return new TransformEvent(item);
+				int l = o.indexOf("(");
+                                String name = o.substring(l+1,o.length()-1);
+				return new TransformEvent(item,name);
 			}
 			if(o.toLowerCase().contains("disappear")){
 				return new DisappearEvent(item);
