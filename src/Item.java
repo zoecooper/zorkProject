@@ -94,9 +94,8 @@ public class Item {
     * @return a string of the message
     * @throw exception if no item exists
     */
-    public String getMessageForVerb(String verb) throws NoItemException {
-	    String message = "";
-    return message;
+    public String getMessageForVerb(String verb) {
+	    return messages.get(verb);
     }
 
     String getEvent(String verb){
