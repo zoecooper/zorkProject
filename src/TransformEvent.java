@@ -8,11 +8,12 @@ class TransformEvent extends Event {
 
 	String execute() {
 		//first removes from inventory
-//		Item theItem = GameState.instance().getItemFromInventoryNamed(itemName);
-//		GameState.instance().removeFromInventory(theItem);
+	//	Item theItem = GameState.instance().getItemFromInventoryNamed(itemName);
+	//	GameState.instance().removeFromInventory(theItem);
                 //disappears it
-//                GameState.instance().getDungeon().disappearItem(String.valueOf(theItem));
-                //new item
-	return "";
+        //        GameState.instance().getDungeon().disappearItem(String.valueOf(theItem));
+        //        new item
+
+		return "";
 	}
 }
