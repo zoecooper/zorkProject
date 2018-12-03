@@ -242,8 +242,8 @@ public class Dungeon {
      * @param primaryItemName the name of the item to be removed from the dungeon
      * @throws Item.NoItemException if the item is not in the dungeon
      */
-    public void disappearItem(String primaryItemName) throws Item.NoItemException {
-        items.remove(GameState.instance().getItemInVicinityNamed(primaryItemName));
+    public void disappearItem(Item i) throws Item.NoItemException {
+        items.remove(i);
     }
 
 }
