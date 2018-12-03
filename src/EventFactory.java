@@ -44,6 +44,9 @@ public class EventFactory {
 			if(o.toLowerCase().contains("transform")){
 				return new TransformEvent(item);
 			}
+			if(o.toLowerCase().contains("disappear")){
+				return new DisappearEvent();
+			}
 			if(o.toLowerCase().contains("win")){
 				return new WinEvent();
 			}
