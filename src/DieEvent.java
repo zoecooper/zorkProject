@@ -6,7 +6,7 @@ public class DieEvent extends Event {
 	/**
 	 * This is where the game ends, meaning the player
 	 * has lost. Die event can be caused when the player
-	 * has reached a 0 in their hunger or health status.
+	 * has reached a 0 in their health status.
 	 * It will reload the game from last restore point. 
 	 */
         

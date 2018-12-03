@@ -55,7 +55,7 @@ public class GameState {
      * Subtracts the points necessary to increase the player's current health.
      */ 
     void subtractHealth(int n){
-	    this.health -= n;
+	    this.health +=  n;
     }
      /**
       * Return's the player's current score.

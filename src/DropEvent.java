@@ -10,7 +10,7 @@ class DropEvent extends Event{
  
     public String execute() {
         try {
-            Item theItem = GameState.instance().getItemFromInventoryNamed(
+            Item theItem = GameState.instance().getDungeon().getItem(
                 itemName);
             GameState.instance().removeFromInventory(theItem);
             GameState.instance().getAdventurersCurrentRoom().add(theItem);

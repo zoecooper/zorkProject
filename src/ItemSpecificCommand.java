@@ -32,13 +32,14 @@ given if they did not provide the correct command for that specific item.
         try {
 
 	String event = itemReferredTo.getEvent(verb);
-        String mak =""; 
+        //System.out.println("returned e " +event);
+	String mak =""; 
 	if(event!= null){
                 Event n = EventFactory.instance().parse(event, noun);
-                mak = n.execute();
+                //mak = n.execute();
         }
 		String msg = itemReferredTo.getMessageForVerb(verb);
-		return  msg + "\n" + mak;
+		return  msg;
         
 		//return (msg == null ? 
 		//		"Sorry, you can't " + verb + " the " + noun + "." : msg) + "\n";

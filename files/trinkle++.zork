@@ -3,7 +3,7 @@ Zork++
 ===
 Items:
 Bomb
-95
+2
 examine:The bomb is a heavy, glistening black sphere. On the top appears to be some form of detonator.
 kick[Wound(2)]:Ouch! That hurt your foot.
 detonate[Die]:An ear-splitting halo of shrapnel kills you and seriously degrades the room's interior.
@@ -68,7 +68,7 @@ Room B6
 Sunlight streams through tall windows and illuminates a brilliant classroom.
 ---
 Rotunda balcony
-Contents: chainsaw,magicWand
+Contents: chainsaw,magicWand,Bomb
 You stand on a circular white balcony overlooking an entry hall.
 Columnar bannisters in ancient Grecian style stand between you and the
 precipice.

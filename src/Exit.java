@@ -48,7 +48,7 @@ public class Exit {
         
         // I'm an Exit object. Great. Add me as an exit to my source Room too,
         // though.
-        System.out.println("src = " + srcTitle);
+      //  System.out.println("src = " + srcTitle);
         src.addExit(this);
 
         // throw away delimiter

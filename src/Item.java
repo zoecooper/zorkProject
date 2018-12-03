@@ -16,7 +16,7 @@ public class Item {
     private int weight;
     private Hashtable<String,String> messages;
     private Set<String> aliases;
-    private Hashtable<String,String> event;
+    private Hashtable<String,String> event = new Hashtable<String,String>();;
 
 
     Item(Scanner s) throws NoItemException,
@@ -24,7 +24,7 @@ public class Item {
 
         messages = new Hashtable<String,String>();
         aliases = new HashSet<String>();
-	event = new Hashtable<String,String>();
+	//event = new Hashtable<String,String>();
         // Read item name.
         String names[] = s.nextLine().split(",");
         if (names[0].equals(Dungeon.TOP_LEVEL_DELIM)) {
@@ -48,7 +48,11 @@ public class Item {
             String[] verbParts = verbLine.split(":");
            
 	    if(verbParts[0].contains("[")){
+	//	    System.out.println(primaryName);
+	//	    System.out.println(verbParts[0]);
 		    int n = verbParts[0].indexOf("[");
+	//	    System.out.println(verbParts[0].substring(0,n));
+	//	    System.out.println(verbParts[0].substring(n));
 		    event.put(verbParts[0].substring(0,n),verbParts[0].substring(n));
 		    messages.put(verbParts[0].substring(0,n),verbParts[1]);
 		    //System.out.println("verb= " + verbParts[0].substring(0,n)+ "message= " + verbParts[1]);
@@ -104,6 +108,7 @@ public class Item {
     }
 
     String getEvent(String verb){
+	// System.out.println(verb);
 	    return event.get(verb);
     }
 	    

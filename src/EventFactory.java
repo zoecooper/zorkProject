@@ -21,46 +21,70 @@ public class EventFactory {
         private EventFactory() {
         }
         public Event parse(String event, String item){
-                String[] n = event.split(",");
+		Item i = null; 
+		try{
+		i = GameState.instance().getDungeon().getItem(item); 
+		}catch(Exception e){
+		
+		}
+                
+		event = event.substring(1,event.length()-1);
+//	       System.out.println(event); 	
+		String[] n = event.split(",");
+		//System.out.println("l");
+		//System.out.println(n.length);
                 for(String o : n){
-			System.out.println(o);
+		//	System.out.println(o);
                         if(o.toLowerCase().contains("wound")){
                                 int l = o.indexOf("(");
                                 int parse = Integer.parseInt(o.substring(l+1,o.length()-1));
 
-                                return new WoundEvent(parse);
-                        }
+                                Event c = new WoundEvent(parse);
+                        	c.execute(); 
+			
+			}
                         if(o.toLowerCase().contains("die")){
-                                return new DieEvent();
-                        }
+                                Event c = new DieEvent();
+                        	c.execute(); 
+			}
 			if(o.toLowerCase().contains("score")){
                                 int l = o.indexOf("(");
-                                int parse = Integer.parseInt(o.substring(l,o.length()-1));
+                                int parse = Integer.parseInt(o.substring(l+1,o.length()-1));
 				System.out.print(parse);
-                                return new ScoreEvent(parse);
-                        }
+                                Event c=  new ScoreEvent(parse);
+                        	c.execute(); 
+			}
 			if(o.toLowerCase().contains("teleport")){
-				return new TeleportEvent();
+				Event c = new TeleportEvent();
+				c.execute(); 
 			}
 			if(o.toLowerCase().contains("transform")){
+		//		System.out.println("hi");
 				int l = o.indexOf("(");
                                 String name = o.substring(l+1,o.length()-1);
-				return new TransformEvent(item,name);
+				Event c = new TransformEvent(i,name);
+				c.execute(); 
 			}
 			if(o.toLowerCase().contains("disappear")){
-				return new DisappearEvent(item);
+				Event c = new DisappearEvent(i);
+				c.execute(); 
 			}
 			if(o.toLowerCase().contains("win")){
-				return new WinEvent();
+				Event c = new WinEvent();
+				c.execute(); 
 			}
 			if(o.toLowerCase().contains("drop")){
-				return new DropEvent(item);
+				Event c =new DropEvent(item);
+				c.execute(); 
 			}
-			
+			else{
+				Event c = new DropEvent(item);
+				c.execute(); 
+			}	
 
 
                 }
-		return new TeleportEvent();
+		return null;
                 
         }
 }

@@ -218,7 +218,7 @@ public class Dungeon {
     public Item getItem(String primaryItemName) throws Item.NoItemException {
         
         if (items.get(primaryItemName) == null) {
-            throw new Item.NoItemException();
+            return null; 
         }
         return items.get(primaryItemName);
     }
@@ -242,8 +242,8 @@ public class Dungeon {
      * @param primaryItemName the name of the item to be removed from the dungeon
      * @throws Item.NoItemException if the item is not in the dungeon
      */
-    public void disappearItem(String primaryItemName) throws Item.NoItemException {
-        items.remove(GameState.instance().getItemInVicinityNamed(primaryItemName));
+    public void disappearItem(Item i){
+        items.remove(i);
     }
 
 }

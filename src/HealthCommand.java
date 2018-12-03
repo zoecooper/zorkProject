@@ -27,7 +27,7 @@ class HealthCommand extends Command {
 
                        message= "You are in excellent condition.";
                }
-	       return message;
+	       return message + "Health= " + health;
        }
 }
 
