@@ -36,7 +36,7 @@ public class EventFactory {
                                 int l = o.indexOf("(");
                                 int parse = Integer.parseInt(o.substring(l,o.length()-1));
 				System.out.print(parse);
-                                return new WoundEvent(parse);
+                                return new ScoreEvent(parse);
                         }
 			if(o.toLowerCase().contains("teleport")){
 				return new TeleportEvent();
