@@ -22,20 +22,22 @@ given if they did not provide the correct command for that specific item.
     */
     public String execute() {
         
-        Item itemReferredTo = null;
+        Item itemReferredTo;
         try {
             itemReferredTo = GameState.instance().getItemInVicinityNamed(noun);
         } catch (Item.NoItemException e) {
             return "There's no " + noun + " here.";
         }
-	String event = itemReferredTo.getEvent(verb);
+	//String event = itemReferredTo.getEvent(verb);
         try {
 		String msg = itemReferredTo.getMessageForVerb(verb);
+		return  msg;
         
-		return (msg == null ? 
-				"Sorry, you can't " + verb + " the " + noun + "." : msg) + "\n";
+		//return (msg == null ? 
+		//		"Sorry, you can't " + verb + " the " + noun + "." : msg) + "\n";
 	}catch(Exception e) {
 	}
+	String event = itemReferredTo.getEvent(verb);
 	if(event!= null){
                 Event n = EventFactory.instance().parse(event, noun);
                 n.execute();

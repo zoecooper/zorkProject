@@ -46,11 +46,12 @@ public class Item {
                     Dungeon.SECOND_LEVEL_DELIM + "' after item.");
             }
             String[] verbParts = verbLine.split(":");
-            messages.put(verbParts[0],verbParts[1]);
+           
 	    if(verbParts[0].contains("[")){
 		    int n = verbParts[0].indexOf("[");
 		    event.put(verbParts[0].substring(0,n),verbParts[0].substring(n));
-		    System.out.println(verbParts[0].substring(n));
+		    messages.put(verbParts[0].substring(0,n),verbParts[1]);
+		    //System.out.println("verb= " + verbParts[0].substring(0,n)+ "message= " + verbParts[1]);
 	    }
      
             verbLine = s.nextLine();

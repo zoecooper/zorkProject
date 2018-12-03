@@ -23,6 +23,7 @@ public class EventFactory {
         public Event parse(String event, String item){
                 String[] n = event.split(",");
                 for(String o : n){
+			System.out.println(o);
                         if(o.toLowerCase().contains("wound")){
                                 int l = o.indexOf("(");
                                 int parse = Integer.parseInt(o.substring(l+1,o.length()-1));
@@ -53,10 +54,12 @@ public class EventFactory {
 			if(o.toLowerCase().contains("drop")){
 				return new DropEvent(item);
 			}
+			
 
 
                 }
-                return null;
+		return new TeleportEvent();
+                
         }
 }
 
